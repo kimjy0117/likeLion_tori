@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    /* 전체 영역 */
+    background-color: lightgray;
+    height: 844px;
+  }
+  
+  body {
+    /* 화면 영역  */
+    text-align: center;
+    width: 390px;
+    height: 844px;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 52px;
+  }
+
+  .topArea{
+    display:flex;
+    flex-direction: row;
+    padding-left: 16px;
+    height: 42px;
+ }
+
+  .bottom{
+    margin-left: 250px;
+  }
+  
+  .titleArea{
+    width: 370px;
+    height: 50px;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: #0000004D;
+    border-width: 1px;
+    margin-left: 10px;
+    margin-top: 14px;
+  }
+
+  #title{
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 21px;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+  }
+
+  .contentArea{
+    width: 390px;
+    height: 620px;
+    position: relative;
+  }
+
+  #content{
+    width: 100%;
+    height: 100%;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+    text-align: left;
+    resize: none;
+  }
+
+  button{
+    background-color: transparent;
+    border: none;
+  }
+
+  #btnName{
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .submitBtn{
+    border: none;
+    border-radius: 3px;
+    background-color: #50BB4E;
+    color: white;
+    font-size: 17px;
+    font-weight: 800;
+    width: 60px;
+    height: 30px;
+  }
+
+  .selectTypeArea{
+    width: 284px;
+    height: 370px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 54px;
+    top: -670px;
+    border-radius: 20px;
+  }
+
+  .selectTitle{
+    width:244px;
+    height:65px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 34px;
+    margin-top: 43px;
+    text-align: center;
+  }
+
+  .typeArea{
+    width: 224px;
+    height: 35px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: #50BB4E;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-top: 3px;    
+  }
+
+  .typeBtn{
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .emphasized {
+    box-shadow: #D9D9D9B2 0 0 0 9999px;
+  }
+
+.ck-editor__editable {
+    min-height: 647px;
+    max-height: 647px;
+}
+
+.ck-placeholder {
+  font-size: 15px;
+  color: #00000066;
+}

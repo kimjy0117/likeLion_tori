@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="../css/mypage.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+</head>
+<body>
+    <header>
+        <!-- 뒤로가기 및 설정 영역 -->
+        <div class="buttonArea">
+            <div style="margin-right:279px">
+                <a href="./main.html">
+                    <img src="../img/arrow_back.png" alt="뒤로가기">
+                </a>
+            </div>
+            <div>
+                <a href="./profile.html">
+                    <img src="../img/setting.png" alt="세팅" />
+                </a>
+            </div>
+        </div>
+
+        <!-- 사용자 로고, 닉네임, 한 줄 소개 영역 -->
+        <div class="introArea">
+            <img id= "logo" src="" style="width: 80px; height: 80px; margin-top: 19px; margin-left: 33px; margin-right:24px">
+            <div class="userArea">
+                <div class="userName">
+                    <span id="userName"></span>
+                </div>
+                <div class="userIntro">
+                    <span id="userIntro"></span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 버튼 영역 -->
+        <div class="userList">
+            <div class="writeB" id="bullet1Btn" style="border-left-width: 0px;">
+                    작성한 글
+            </div>
+
+            <div class="writeB" id="bullet2Btn">
+                    댓글 단 글
+            </div>
+
+            <div class="writeB" id="bullet3Btn" style="border-right-width: 0px;">    
+                    좋아한 글
+            </div>
+        </div>
+    </header>
+
+    <!-- 작성한 글 게시판 -->
+    <div class="container" id="bullet1">
+        <main>
+            <div class="rectangle">
+            </div>
+        </main>
+    </div>
+
+    <!-- 댓글 단 글 게시판 -->
+    <div class="container" id="bullet2">
+        <main>
+            <div class="rectangle" style="margin-top: 179px">
+                <span style="margin-left: 14px; font-size: 20px; color: #00000080; font-weight: 700">해당하는 글이 존재하지 않습니다.</span>
+            </div>
+        </main>
+    </div>
+
+    <!-- 좋아한 글 -->
+    <div class="container" id="bullet3">
+        <main>
+            <div class="rectangle" style="margin-top: 179px">
+                <span style="margin-left: 14px; font-size: 20px; color: #00000080; font-weight: 700">해당하는 글이 존재하지 않습니다.</span>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script  src="../js/mypage.js"></script>
+    <script  src="../js/mypageAxios.js"></script>
+</body>
+</html>

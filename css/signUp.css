@@ -1,0 +1,218 @@
+header {
+  margin-bottom: 49px;
+}
+form {
+  position: relative;
+}
+
+.profileWrap {
+  height: 120px;
+}
+
+.profileImg {
+  margin: 51px auto 29px auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+}
+
+#addIcon:hover {
+  cursor: pointer;
+}
+.scrollArea {
+  overflow-y: scroll;
+  max-height: 445px; /* 계산 했을 때 454 px */
+}
+
+.scrollArea::-webkit-scrollbar {
+  width: 16px;
+}
+
+.scrollArea::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.scrollArea::-webkit-scrollbar-thumb {
+  background-color: #0000004d;
+  border-radius: 12px;
+  border: 6px solid #ffffff;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+li {
+  margin: 29px;
+}
+
+li:nth-child(2) {
+  margin-bottom: 0;
+}
+
+.passwordWrap {
+  border: 1px solid #0000004d;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 314px;
+  margin: 0 auto 0px auto;
+}
+
+.passwordWrap input {
+  box-sizing: border-box;
+  padding-left: 18px;
+  width: 301px;
+  height: 52px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #0000004d;
+  outline: none;
+  border: none;
+}
+
+#inputExplain {
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-block;
+  padding-right: 80px;
+  width: 250px;
+  text-align: left;
+  padding-left: 5px;
+}
+
+#pwCheckExp {
+  font-size: 11px;
+  font-weight: 500;
+  display: inline-block;
+  padding-right: 80px;
+  width: 250px;
+  text-align: left;
+  padding-left: 5px;
+  margin-bottom: 30px;
+}
+
+hr {
+  box-sizing: border-box;
+  margin: 0;
+  width: auto;
+  height: 0;
+  color: #0000004d;
+}
+
+button {
+  width: 314px;
+  height: 52px;
+  background-color: #50bb4e;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600px;
+  padding: 16px 14px 17px 13px;
+  border-radius: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+#verifyP {
+  text-align: left;
+  font-size: 15px;
+  padding-left: 38px;
+  font-weight: 500;
+  color: #2e3134;
+}
+
+.verifyInner {
+  margin-bottom: 12px;
+}
+.verifyInner input {
+  width: 232px;
+  height: 52px;
+  border: 1px solid #0000004d;
+  font-size: 14px;
+  margin-right: 6px;
+}
+
+.verifyInner button {
+  background-color: #f0f0f0;
+  border: 1px solid #0000004d;
+  width: 71px;
+  height: 52px;
+  font-size: 13px;
+  color: #00000099;
+  padding: 0;
+  box-shadow: 0px 4px 4px 0px #00000026;
+}
+
+.verifyInner button:hover {
+  cursor: pointer;
+  background-color: #50bb4e;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0px 4px 4px 0px #00000026;
+}
+
+.verifyInner2 {
+  text-align: left;
+  margin-left: 33px;
+}
+
+.verifyInner2 input {
+  width: 142px;
+  height: 43px;
+  border: 1px solid #0000004d;
+  font-size: 14px;
+  margin-right: 6px;
+}
+.verifyInner2 button {
+  background-color: #f0f0f0;
+  border: 1px solid #0000004d;
+  width: 71px;
+  height: 43px;
+  font-size: 13px;
+  color: #00000099;
+  padding: 0;
+  box-shadow: 0px 4px 4px 0px #00000026;
+}
+
+.verifyInner2 button:hover {
+  cursor: pointer;
+  background-color: #50bb4e;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0px 4px 4px 0px #00000026;
+}
+
+#resend {
+  text-decoration: underline;
+  color: #2e3134;
+  display: inline-block;
+  margin-left: 258px;
+}
+
+#nickname {
+  text-align: center;
+  width: 200px;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #0000004d;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  outline: none;
+}
+
+#nickname:focus {
+  border-bottom: 2px solid #50bb4e;
+}
+
+#resend:hover {
+  cursor: pointer;
+}

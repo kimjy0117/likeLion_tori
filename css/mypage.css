@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    /* 전체 영역 */
+    background-color: lightgray;
+    height: 844px;
+  }
+  
+  body {
+    /* 화면 영역  */
+    text-align: center;
+    width: 390px;
+    height: 844px;
+    background-color: white;
+    margin: 0 auto;
+  }
+
+  header{
+    background-color: white;
+    width: 390px;
+    height: 288px;
+  }
+
+  main{
+    background-color: #F0F0F0;
+    width: 390px;
+  }
+
+  .buttonArea{
+    display: flex;
+    flex-direction: row;
+    width: 390px;
+    height: 87px;
+    padding-top: 44px;
+    padding-left: 16px;
+    padding-right: 25px;
+  }
+
+  button{
+    background-color: white;
+  }
+
+
+  .introArea{
+    width: 390px;
+    height: 144px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .userLogo{
+    width: 80px;
+    height: 80px;
+  }
+
+  .userName{
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 29px;
+    margin-bottom: 6px;
+  }
+
+  .userIntro{
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .userList{
+    display: flex;
+    flex-direction: row;
+    width: 390px;
+    height: 57px;
+
+  }
+
+  .userArea{
+    text-align: left;
+  }
+
+  .writeB{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 57px;
+    font-size: 20px;
+    font-weight: 600;
+    border: solid;
+    border-width: 1px;
+    border-color: #0000004D;
+    background-color: white;
+  }
+
+  main{
+    padding-top: 43px;
+  }
+
+  .rectangle{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-right: 14px;
+  }
+
+  #bulletinPost{
+    width: 165px;
+    height: 200px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-bottom: 14px;
+    background-color: white;
+    text-align: left;
+  }
+
+  #divTitle{
+    width: 127px;
+    height: 24px;
+    margin-top: 24px;
+    margin-left: 19px;
+  }
+  
+  #divTitle1{
+    width: 127px;
+    height: 143px;
+    text-align: left;
+    margin-top: 24px;
+    margin-left: 19px;
+  }
+  
+  #divContent{
+    width: 127px;
+    height: 97px;
+    margin-top: 9px;
+    margin-left: 19px;
+    margin-bottom: 9px;
+  }
+  
+  #divUser{
+    display: flex;
+    align-items: center;
+    margin-left: 19px;
+    margin-bottom: 19px;
+
+  }
+
+  #divIntro{
+    width: 165px;
+    height: 80px;
+    position: relative;
+    top: -82px;
+    background-color: #00000066;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  #divtitle{
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 9px;
+  }
+
+  #divuser{
+    display:flex;
+    align-items: center;
+    margin-left: 19px;
+  }
+
+  .container {
+    height: 556px;
+    overflow-y: scroll;
+    background-color: #F0F0F0;
+  }
+
+  .container::-webkit-scrollbar {
+      display: none;
+  }

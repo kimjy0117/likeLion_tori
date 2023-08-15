@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    /* 전체 영역 */
+    background-color: lightgray;
+    height: 844px;
+  }
+  
+  body {
+    /* 화면 영역  */
+    text-align: center;
+    width: 390px;
+    height: 844px;
+    background-color: white;
+    margin: 0 auto;
+    padding-top: 52px;
+  }
+
+  /* 등록, 최신 버튼 영역 */
+  .topBtnArea{
+    text-align: left;
+    margin-right:300px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    padding-left: 16px;
+  }
+
+  .topArea{
+    width: 370px;
+    height: 29px;
+    text-align: left;
+    margin-left: 9px;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    border-bottom: solid;
+    border-color: #0000004D;
+    border-width: 1px;
+
+  }
+
+  #topBtn1{
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  #topBtn2{
+    background-color: transparent;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* 댓글 출력 영역 */
+  .comment{
+    width: 370px;
+    height: 123px;
+    border-top: solid;
+    border-width: 1px;
+    border-color: #0000004D;
+  }
+
+  .commentArea{
+    width: 370px;
+    height: 501px;
+    padding-left: 9px;    
+  }
+
+ 
+
+  .bottomArea{
+    width: 390px;
+    height: 206px;
+    border-top: solid;
+    border-width: 2px;
+    border-color: #0000004D;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contentArea{
+    width: 341px;
+    height: 115px;
+    margin-bottom: 14px;
+  }
+
+  #content{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+    background-color: #F0F0F0B2;
+    font-size: 16px;
+    font-weight: 600;
+    padding-top: 16px;
+    padding-left: 17px;
+    resize: none;
+  }
+
+  #div{
+    width: 370px;
+    border-bottom: solid;
+    border-color: #0000004D;
+    border-width: 1px;
+    text-align: left;
+  }
+
+  #divTop{
+    display:flex;
+    justify-content: space-between;
+    margin-top: 12px;
+    margin-left: 6px;
+  }
+
+  #divUser{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #divDate{
+    margin-right: 10px;
+  }
+
+  #divContent{
+    margin-top: 15px;
+    margin-bottom: 48px;
+    margin-left: 6px;
+  }
+
+
+  .bottomArea{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn{
+    width: 100px;
+    height: 40px;
+    margin-left: 240px;
+    border: none;
+    border-radius: 10px;
+    background-color: #50BB4E;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  .container {
+    height: 501px;
+    overflow-y: scroll;
+  }
+
+  .container::-webkit-scrollbar {
+      display: none;
+  }

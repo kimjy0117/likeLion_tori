@@ -1,0 +1,51 @@
+img {
+  margin: 0;
+}
+
+.logoArea {
+  padding-top: 86px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  padding-top: 0;
+  font-size: 50px;
+  color: #339931;
+}
+
+header {
+  margin-bottom: 85px;
+}
+
+#emphasize {
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  background-color: #50bb4e;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0px 4px 4px 0px #00000026;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+p {
+  margin-bottom: 86px;
+}
+
+/*
+버튼 흰 배경에 되어있는 다른 버튼의 경우.
+#button {
+  border: 1px solid #0000004d;
+  background-color: white;
+  line-height: 24.2px;
+  color: #00000099;
+  box-shadow: 0px 4px 4px 0px #00000026;
+}
+*/

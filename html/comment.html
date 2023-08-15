@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="../css/comment.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+</head>
+<body>
+    <div class="topBtnArea">
+        <a href="./bulletin.html">
+            <span class="material-symbols-outlined" style="width: 40px; height:40px; color: black; height: 35px">
+                arrow_back
+            </span>
+        </a>
+    </div>
+
+    <div class="topArea">
+        <button id="topBtn1">등록순</button>
+        <button id="topBtn2">최신순</button>
+    </div>
+
+    <div class="container">
+        <div class="commentArea">
+        </div>
+    </div>
+
+    <form id="comment-form">
+        <div class="bottomArea" id="bottomArea">
+            <div class="contentArea">
+                <textarea id="content" name="content" placeholder=" 댓글을 작성해보세요"></textarea>
+            </div>
+            <input type="submit" class="btn" value="등록"/>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script  src="../js/commentAxios.js"></script>
+    <script  src="../js/comment.js"></script>
+</body>
+</html>

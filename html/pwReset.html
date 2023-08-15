@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비밀번호 재설정</title>
+    <link rel="stylesheet" href="../css/signUp(shared).css" />
+    <link rel="stylesheet" href="../css/signUp.css" />
+    <link rel="stylesheet" href="../css/pwRest.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="../html/login.html">
+        <div class="goBack">
+          <span class="material-symbols-outlined"> arrow_back </span>
+        </div>
+      </a>
+      <h1>비밀번호 재설정</h1>
+      <p id="innerExplain" style="text-align: center">
+        새로운 비밀번호를 입력해주세요. <br />
+        *영문, 숫자, 특수문자 조합 9~15 자리
+      </p>
+    </header>
+    <main>
+      <section>
+        <form id="form">
+          <div class="inputWrapper">
+            <div class="passwordWrap">
+              <input
+                type="password"
+                placeholder="비밀번호"
+                id="password1"
+                oninput="passwordCheck()"
+                required
+              />
+              <hr />
+              <input
+                type="password"
+                placeholder="비밀번호 확인"
+                id="password2"
+                oninput="passwordCheck()"
+                required
+              />
+            </div>
+            <span id="pwCheckExp" style="margin-bottom: 330px"
+              >*영문, 숫자, 특수기호 조합 9~15자리</span
+            >
+          </div>
+          <button id="formSubmit">입력 완료</button>
+        </form>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/pwReset.js" defer></script>
+  </body>
+</html>

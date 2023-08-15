@@ -1,0 +1,41 @@
+#innerExplain{
+    text-align: center;
+    padding-left: 0;
+}
+
+.inputBox {
+  /* margin-bottom: 45px; */
+  border: 1px solid #0000004d;
+  border-radius: 8px;
+  box-sizing: border-box;
+  width: 314px;
+  margin: 0 auto 369px auto;
+  box-shadow: 0px 4px 4px 0px #00000026;
+}
+
+input {
+  box-sizing: border-box;
+  padding-left: 18px;
+  width: 301px;
+  height: 52px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #00000066;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 0;
+}
+
+/* input:focus {
+  border-color: #50bb4e;
+} */
+
+#firstHr {
+  box-sizing: border-box;
+  margin: 0;
+  width: auto;
+  height: 0;
+  color: #0000004d;
+}
+

@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    /* 전체 영역 */
+    background-color: lightgray;
+    height: 844px;
+  }
+  
+  body {
+    /* 화면 영역  */
+    position: relative;
+    text-align: center;
+    width: 390px;
+    height: 844px;
+    background-color: white;
+    margin: 0 auto;
+  }
+
+  h1{
+    margin-top: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: #03a400;
+  }
+
+  header{
+    padding-top: 46px;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  .logoContainer{
+    display:inline-block;
+    margin-right: 60px;
+  }
+
+  .logoContainer:hover{
+    cursor:pointer;
+  }
+
+  .upperMenu{
+    display:inline-block;
+    margin-left: 60px;
+    width: 123px;
+    height: 38px;
+  }
+
+  #searchIcon{
+    margin-top: 5px;
+  }
+
+  #searchIcon:hover{
+    cursor: pointer;
+  }
+
+  #login{
+    padding: 7px 12px;
+    margin-left: 2.5px;
+    width:85px;
+    height:38px;
+    border-radius: 30px;
+    background-color: #50BB4E;
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .upperMenu a{
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+
+  #searchIcon{
+    display:inline-block;
+    width: 33px;
+    height: 33px;
+  }
+
+.sideBar{
+  position:absolute;
+  left: 29px;
+  top: 118px;
+}
+
+.sideBar{
+  cursor: pointer;
+}
+
+.alignMenu{
+  /* display: absolute; */
+  left: 50px;
+  width: 116px;
+  height: 36px;
+  margin-left: 265px;
+  margin-top: 25px;
+}
+
+select{
+  width: 71px;
+  height: 36px;
+  text-align-last: center;
+  text-align: center;
+  /* -ms-text-align-last: center;
+  -moz-text-align-last: center; */
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18.15px;
+  border-style: none;
+  color: #000000BA;
+}
+
+select:focus{
+  outline: none;
+}
+
+.userImg{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #D9D9D9;
+}
+
+
+/* 
+동적으로 생성될 사이드 바 전체 영역 id = sideDrawer
+햄버거 버튼 id = sideBarBtn 
+*/
+
+#sideDrawer {
+  display: none;
+  /* position: fixed; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  color: #000000BA;
+  width: 259px;
+  height: 844px;
+  /* height: 100vh; */
+  text-align: center;
+}
+
+.emphasized {
+  box-shadow : rgba(0,0,0,0.3) 0 0 0 9999px;
+}
+
+.side_userProfile{
+  padding-top: 46px;
+}
+
+.userImg{
+  margin: 0 auto;
+}
+
+.side_userProfile{
+  text-align: center;
+}
+
+#userName{
+  display: block;
+}
+
+#checkProfile{
+  display: block;
+  width: 145px;
+  height: 37px;
+  border-radius: 10px;
+  color: #000000;
+  background-color: #F0F0F0;
+  font-weight: 500;
+  size: 18px;
+  line-height: 21.78px;
+  padding: 10;
+}
+
+#checkProfille:hover{
+  cursor: pointer;
+}
+#sideDrawer ul{
+  padding-left: none;
+}

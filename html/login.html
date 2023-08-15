@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link rel="stylesheet" href="../css/login.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="../html/index.html">
+        <div class="goBack">
+          <span class="material-symbols-outlined"> arrow_back </span>
+        </div>
+      </a>
+      <div class="logoArea">
+        <a href="./Login.html"
+          ><img src="../img/logoCombined.svg" alt="로고이미지"
+        /></a>
+      </div>
+    </header>
+    <main>
+      <form id="form-login">
+        <div class="inputBox" style="position: relative">
+          <input
+            id="email"
+            name="email"
+            type="text"
+            placeholder="아이디를 입력하세요"
+            required
+          />
+          <hr id="firstHr" />
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="비밀번호를 입력하세요"
+            required
+          />
+        </div>
+        <span
+          class="pwCheck"
+          style="
+            color: #e70000;
+            font-size: 10px;
+            display: block;
+            margin-bottom: 35px;
+            position: absolute;
+            padding-left: 38px;
+            visibility: hidden;
+          "
+        >
+          <!-- visibility: visible; 로그인 실패 시 변경 -->
+          *아이디 또는 비밀번호를 다시 확인하세요.
+        </span>
+        <div class="btnArea">
+          <button>로그인</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <p>
+        <span id="findAccount"><a href="./forgot.html">계정찾기</a></span>
+        /
+        <span id="signUp"> <a href="../html/signUp.html">회원가입</a></span>
+      </p>
+
+      <hr id="secondHr" />
+      <div class="snsLogin">
+        <p>SNS 계정으로 로그인</p>
+        <div class="snsIcon">
+          <img id="naverImg" src="../img/naver.png" alt="네이버 아이콘" />
+          <img
+            id="kakaotalkImg"
+            src="../img/kakaotalk.png"
+            alt="카카오톡 아이콘"
+          />
+        </div>
+      </div>
+    </footer>
+
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/login.js" defer></script>
+  </body>
+</html>

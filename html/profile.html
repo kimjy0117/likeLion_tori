@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
+</head>
+<body>
+    <!-- 뒤로가기 버튼 -->
+    <div class="buttonArea" style="margin-right:300px; padding-top: 52px">
+        <a href="./mypage.html">
+            <img src="../img/arrow_back.png" alt="뒤로가기">
+        </a>
+    </div>
+    <div>
+        <h1>프로필 설정</h1>
+    </div>
+
+    <form id="profile-form">
+        <!-- 사용자 로고 -->
+        <div style="height: 100px; margin-bottom: 29px;">
+            <div class="logo">
+                <img id= "logo" src="" style="width: 100px; height: 100px;">
+            </div>
+
+            <!-- 카메라 버튼 -->
+            <div class="camera">
+                <button class="cameraBtn">
+                    <img id= "camera" src="../img/camera.svg">
+                </button>
+            </div>
+        </div>
+        
+        <!-- 별명 입력 -->
+        <div class="inputName">
+            <input id="inputName" type="text" placeholder="별명">
+        </div>
+
+        <!-- 한 줄 소개 입력 -->
+        <div class="inputIntro">
+            <input id= "inputIntro" type="text" placeholder="  한 줄 소개">
+        </div>
+
+        <!-- 완료 버튼 -->
+        <div class="clear">
+            <input type="submit" class="clearBtn" value="등록"/>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script  src="../js/profile.js"></script>
+    <script  src="../js/profileAxios.js"></script>
+</body>
+</html>
