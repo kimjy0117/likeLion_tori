@@ -3,7 +3,7 @@ const userIntro = document.getElementById('userIntro');
 
 // 유저 정보
 axios
-    .get("https://3.36.100.188/api/accounts/dj-rest-auth/user",
+    .get("https://servicetori.site/api/accounts/dj-rest-auth/user",
     {
         headers: {Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDk1MjQxLCJpYXQiOjE2OTIwODgwNDEsImp0aSI6ImIzZTQ0ODBmZWM0YjQxMDRiODg1YTAyMTZlNmFmYmY2IiwidXNlcl9pZCI6MX0.SGXk-M-dnoODH27XqtsKPysf-g3vAQqfyKunMpdMpYE"}
     },
@@ -28,7 +28,7 @@ axios
 
 // 포스트 정보
 axios
-    .get("https://3.36.100.188/api/posts/posts/",
+    .get("https://servicetori.site/api/posts/posts/",
     )
     .then(function (response){
         //성공 시

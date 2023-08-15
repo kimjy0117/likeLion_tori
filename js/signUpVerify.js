@@ -55,7 +55,7 @@ form2.addEventListener("submit", (event) => {
 
   axios
     .post(
-      "https://3.36.100.188/api/accounts/smsauth/confirm",
+      "https://servicetori.site/api/accounts/smsauth/confirm",
       {
         phone_number: phoneNumber,
         auth_number: verifyNumber,

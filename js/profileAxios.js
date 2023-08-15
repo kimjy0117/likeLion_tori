@@ -13,7 +13,7 @@ function profileBtnHandler(e){
 
     axios
     .patch(
-      "https://3.36.100.188/api/accounts/dj-rest-auth/user",
+      "https://servicetori.site/api/accounts/dj-rest-auth/user",
       {
         "nickname": nickname,
         "introduce": introduce,

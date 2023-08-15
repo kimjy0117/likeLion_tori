@@ -80,7 +80,7 @@ form2.addEventListener("submit", (event) => {
       alert("인증에 성공하였습니다.");
       axios
         .post(
-          "https://3.36.100.188/api/accounts/finduser",
+          "https://servicetori.site/api/accounts/finduser",
           {
             phone_number: phoneNumber,
           },

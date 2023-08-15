@@ -32,7 +32,7 @@ class UploadAdapter {
                 data.append('file', file);
                 
                 axios
-                .post("https://3.36.100.188/api/posts/images/", data,
+                .post("https://servicetori.site/api/posts/images/", data,
                     {
                         headers: {
                             'Authorization':"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDk1MjQxLCJpYXQiOjE2OTIwODgwNDEsImp0aSI6ImIzZTQ0ODBmZWM0YjQxMDRiODg1YTAyMTZlNmFmYmY2IiwidXNlcl9pZCI6MX0.SGXk-M-dnoODH27XqtsKPysf-g3vAQqfyKunMpdMpYE",

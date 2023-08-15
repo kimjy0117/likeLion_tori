@@ -5,7 +5,7 @@ form.addEventListener("submit", (event) => {
   const email = document.querySelector("#email").value;
   axios
     .post(
-      "https://3.36.100.188/api/accounts/finduser/send",
+      "https://servicetori.site/api/accounts/finduser/send",
       {
         email: email,
       },
