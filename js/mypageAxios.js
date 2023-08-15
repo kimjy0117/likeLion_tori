@@ -11,6 +11,10 @@ axios
     //{
     //    headers: {Authorization: token}
     //},
+         
+      {
+        withCredentials: true,
+      }
     )
     .then(function (response){
         let logo = "../img/logo80.svg";
