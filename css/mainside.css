@@ -140,6 +140,7 @@ select:focus {
   height: 844px;
   /* height: 100vh; */
   text-align: center;
+  z-index: 1;
 }
 
 .emphasized {

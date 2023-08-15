@@ -5,10 +5,13 @@ const text = document.getElementById('text');
 const like = document.getElementById('likeIcon');
 const count = document.getElementById('count');
 
+let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTM5MDEzLCJpYXQiOjE2OTIxMzE4MTMsImp0aSI6IjU1YjBlZjUwYWU5ZTRkZWJiYzU3YmE5NjFjNzFjNjFhIiwidXNlcl9pZCI6MX0.wnKEFP_QLawdiptDirneutZgHtadg1-OxMGizPbJCD0";
+let getPostId = "https://servicetori.site/api/posts/posts/4/"
+
 axios
-    .get("https://servicetori.site/api/posts/posts/4/",
+    .get(getPostId,
     {
-        headers: {Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTAyNjQ5LCJpYXQiOjE2OTIwOTU0NDksImp0aSI6ImQ4ZjVkYzdhZjk0MjQyOGRhMjk1NGM4YTExNDA1YjYzIiwidXNlcl9pZCI6MX0.nBtmhhVKmZScc9dwE2SJN_dTn9JPIbTguB3w_Nxq3Ok"}
+        headers: {Authorization: token}
     },
     )
     .then(function (response){

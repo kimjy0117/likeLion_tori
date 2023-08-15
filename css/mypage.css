@@ -149,7 +149,7 @@
     width: 165px;
     height: 80px;
     position: relative;
-    top: -82px;
+    top: -84px;
     background-color: #00000066;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -170,9 +170,20 @@
   .container {
     height: 556px;
     overflow-y: scroll;
+    overflow-x: hidden;
     background-color: #F0F0F0;
   }
 
   .container::-webkit-scrollbar {
-      display: none;
+    width: 16px;
   }
+  
+.container::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  
+.container::-webkit-scrollbar-thumb {
+    background-color: #0000004d;
+    border-radius: 12px;
+    border: 6px solid #ffffff;
+}

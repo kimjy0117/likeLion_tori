@@ -1,24 +1,43 @@
-const title = document.getElementById('title');
-const text = document.getElementById('text');
-const user = document.getElementById('user');
-const like = document.getElementById('likeIcon');
-const count = document.getElementById('count');
+let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTM5MDEzLCJpYXQiOjE2OTIxMzE4MTMsImp0aSI6IjU1YjBlZjUwYWU5ZTRkZWJiYzU3YmE5NjFjNzFjNjFhIiwidXNlcl9pZCI6MX0.wnKEFP_QLawdiptDirneutZgHtadg1-OxMGizPbJCD0";
+let getUser = "https://servicetori.site/api/accounts/dj-rest-auth/user";
+let getPost = "https://servicetori.site/api/posts/posts/";
 
 axios
-    .get("https://servicetori.site/api/posts/posts/32/",
+    .get(getUser,
     {
-        headers: {Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkxOTg0MDU3LCJpYXQiOjE2OTE5NzY4NTcsImp0aSI6ImE0NTUwZWU3NGViODQyZTM5OWEzYTE1MjFiZmI5N2Y3IiwidXNlcl9pZCI6MX0.UJBEQYxjpweEEhdx4j8pWTeU7xWM0TwwcPf2du0HmeQ"}
+        headers: {Authorization: token}
     },
     )
     .then(function (response){
         //성공 시
-        alert("성공");
+        console.log(response);
+        let data = response.data;
+        userIntro(data);
+    })
+    .catch(function (error){
+        //에러 시
+        alert("실패");
+        console.log(error);
+    })
+    .finally(function(){
+    //항상 실행되는 함수
+    });
+
+
+
+axios
+    .get(getPost,
+    )
+    .then(function (response){
+        //성공 시
+        console.log(response);
         
-        document.getElementById('logo').src= logo;
-        title.innerHTML = titleText;
-        date.innerHTML = redate;
-        userName.innerHTML = id;
-        text.innerHTML = contentText;
+        let data = response.data;
+        let postLength = response.data.length;
+
+        if(postLength>0){
+            createPost(postLength, data);
+        }
     })
     .catch(function (error){
         //에러 시
@@ -29,20 +48,166 @@ axios
      //항상 실행되는 함수
     });
 
+function userIntro(data){
+    document.getElementById('userName').innerHTML = data.nickname;
+    // document.querySelector("#userImg").src = data.profile_iamge;
+    document.getElementById("userImg").src = "../img/logo80.svg";
+}
 
+function createPost(length, data){
+    const container = document.querySelector('.container');
+    for(let i=0; i<length; i++){
 
-let blikeIcon = "../img/heart.png";
-let likeIcon = "../img/blueheart.png";
-let likeCount= 0;
+        // 이미지 파일이 있을때
+        if(data[i].images.length>0){
+            const divBox = document.createElement('div');
+            const divImg = document.createElement('div');
+            const divTitle = document.createElement('div');
+            const divBottom = document.createElement('div');
+            const divUser = document.createElement('div');
+            const divLike = document.createElement('div');
+            const titleSpan = document.createElement('span');
+            const userSpan = document.createElement('span');
+            const likeSpan = document.createElement('span');
+            const userImg = document.createElement('img');
+            const heartImg = document.createElement('img');
+            const img = document.createElement('img');
 
-function likeEvent(){
-    if (likeCount == 0){
-        like.src = likeIcon;
-        likeCount += 1;
-    }
+            let title;
+            
+            // 제목이 14자 이상일 경우 13자로 짜르기
+            if(data[i].title.length>13){
+                title = data[i].title.substr(0,13) + "...";
+            }
+            else{
+                title = data[i].title;
+            }
 
-    else{
-        like.src = blikeIcon
-        likeCount -= 1;
+            divBox.id = 'divBox';
+            divImg.id = 'divImg';
+            divTitle.id = 'divTitle';
+            divBottom.id = 'divBottom';
+            divUser.id = 'divUser';
+            divLike.id = 'divLike';
+            
+            titleSpan.innerHTML = title;
+            titleSpan.style.fontSize = "25px";
+            titleSpan.style.fontWeight = "700";
+
+            userSpan.innerHTML = data[i].writer;
+            userSpan.style.fontSize = "16px";
+            userSpan.style.fontWeight = "600";
+            userSpan.style.marginLeft = "7px";
+
+            likeSpan.innerHTML = data[i].like_count;
+            likeSpan.style.fontSize = "15px";
+            likeSpan.style.fontWeight = "500";
+
+            userImg.src = "../img/logo30.svg";
+            heartImg.src = "../img/blueheart25.png";
+            
+            img.src = "https://servicetori.site" + data[i].images[0].image;
+            img.style.width = "338px";
+            img.style.height = "260px";
+            img.style.borderTopLeftRadius = "10px";
+            img.style.borderTopRightRadius = "10px";
+
+            divImg.appendChild(img);
+            divTitle.appendChild(titleSpan);
+            divUser.appendChild(userImg);
+            divUser.appendChild(userSpan);
+            divLike.appendChild(heartImg);
+            divLike.appendChild(likeSpan);
+
+            divBottom.appendChild(divUser);
+            divBottom.appendChild(divLike);
+
+            divBox.appendChild(divImg);
+            divBox.appendChild(divTitle);
+            divBox.appendChild(divBottom);
+
+            container.appendChild(divBox);       
+        }
+
+        // 이미지 파일이 없을때
+        else{         
+            const divBox = document.createElement('div');
+            const divTop = document.createElement('div');
+            const divContent = document.createElement('div');
+            const divBottom = document.createElement('div');
+            const divUser = document.createElement('div');
+            const divLike = document.createElement('div');
+            const titleSpan = document.createElement('span');
+            const contentSpan = document.createElement('span');
+            const userSpan = document.createElement('span');
+            const likeSpan = document.createElement('span');
+            const userImg = document.createElement('img');
+            const heartImg = document.createElement('img');
+
+            let title;
+            let content;
+
+            // 제목이 14자 이상일 경우 13자로 짜르기
+            if(data[i].title.length>13){
+                title = data[i].title.substr(0,13) + "...";
+            }
+            else{
+                title = data[i].title;
+            }
+
+            // 내용이 71자 이상일 경우 70자로 짜르기
+            if(data[i].content.length>70){
+                content = data[i].content.substr(0, 70) + "...";
+            }
+            else{
+                content = data[i].content;
+            }
+            
+            divBox.id = 'divBox';
+            divTop.id = 'divTop';
+            divContent.id = 'divContent';
+            divBottom.id = 'divBottom';
+            divUser.id = 'divUser';
+            divLike.id = 'divLike';
+
+            titleSpan.innerHTML = title;
+            titleSpan.style.fontSize = "25px";
+            titleSpan.style.fontWeight = "700";
+            titleSpan.style.marginLeft = "11px";
+
+            contentSpan.innerHTML = content;
+            contentSpan.style.fontSize = "15px";
+            contentSpan.style.fontWeight = "400";
+            contentSpan.style.marginLeft = "11px";
+
+            userSpan.innerHTML = data[i].writer;
+            userSpan.style.fontSize = "16px";
+            userSpan.style.fontWeight = "600";
+            userSpan.style.marginLeft = "7px";
+
+            likeSpan.innerHTML = data[i].like_count;
+            likeSpan.style.fontSize = "15px";
+            likeSpan.style.fontWeight = "500";
+
+            userImg.src = "../img/logo30.svg";
+
+            heartImg.src = "../img/blueheart25.png";
+
+            divTop.appendChild(titleSpan);
+            divContent.appendChild(contentSpan);
+            divUser.appendChild(userImg);
+            divUser.appendChild(userSpan);
+            divLike.appendChild(heartImg);
+            divLike.appendChild(likeSpan);
+
+            divBottom.appendChild(divUser);
+            divBottom.appendChild(divLike);
+
+            divBox.appendChild(divTop);
+            divBox.appendChild(divContent);
+            divBox.appendChild(divBottom);
+
+            container.appendChild(divBox);            
+        }
     }
 }

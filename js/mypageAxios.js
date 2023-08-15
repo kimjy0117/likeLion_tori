@@ -1,11 +1,15 @@
 const userName = document.getElementById('userName');
 const userIntro = document.getElementById('userIntro');
 
+let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTM5MDEzLCJpYXQiOjE2OTIxMzE4MTMsImp0aSI6IjU1YjBlZjUwYWU5ZTRkZWJiYzU3YmE5NjFjNzFjNjFhIiwidXNlcl9pZCI6MX0.wnKEFP_QLawdiptDirneutZgHtadg1-OxMGizPbJCD0";
+let getUser = "https://servicetori.site/api/accounts/dj-rest-auth/user";
+let getPost = "https://servicetori.site/api/posts/posts/";
+
 // 유저 정보
 axios
-    .get("https://servicetori.site/api/accounts/dj-rest-auth/user",
+    .get(getUser,
     {
-        headers: {Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDk1MjQxLCJpYXQiOjE2OTIwODgwNDEsImp0aSI6ImIzZTQ0ODBmZWM0YjQxMDRiODg1YTAyMTZlNmFmYmY2IiwidXNlcl9pZCI6MX0.SGXk-M-dnoODH27XqtsKPysf-g3vAQqfyKunMpdMpYE"}
+        headers: {Authorization: token}
     },
     )
     .then(function (response){
@@ -28,14 +32,13 @@ axios
 
 // 포스트 정보
 axios
-    .get("https://servicetori.site/api/posts/posts/",
+    .get(getPost,
     )
     .then(function (response){
         //성공 시
         // alert("성공");
 
         console.log(response);
-        console.log(response.data[2].title.length);
         
         let postLength = response.data.length;
 
@@ -89,10 +92,11 @@ function createBulletin(length, data){
 
             userImg.src = "../img/logo20.svg";
             
+            img.src = "https://servicetori.site" + data[i].images[0].image;
             img.style.width = "165px";
             img.style.height = "198px";
             img.style.borderRadius = "20px";
-            img.src = data[i].images;
+            
 
             divtitle.appendChild(titlespan);
             divuser.appendChild(userImg);

@@ -69,8 +69,6 @@
     padding-left: 9px;    
   }
 
- 
-
   .bottomArea{
     width: 390px;
     height: 206px;
@@ -152,8 +150,19 @@
   .container {
     height: 501px;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .container::-webkit-scrollbar {
-      display: none;
+    width: 16px;
   }
+  
+.container::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  
+.container::-webkit-scrollbar-thumb {
+    background-color: #0000004d;
+    border-radius: 12px;
+    border: 6px solid #ffffff;
+}

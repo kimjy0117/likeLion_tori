@@ -25,7 +25,7 @@ form_login.addEventListener("submit", (event) => {
       // 성공
       console.log(response); // test
       alert("로그인에 성공하였습니다.");
-      window.location.href = "./index.html";
+      // window.location.href = "./index.html";
     })
     .catch((error) => {
       // 실패

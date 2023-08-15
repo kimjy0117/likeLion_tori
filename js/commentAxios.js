@@ -2,12 +2,13 @@ const input = document.querySelector("#content");
 const warning = document.querySelector("#warning");
 const bottomArea = document.getElementById('bottomArea');
 const commentBtn = document.querySelector("#comment-form");
-
 commentBtn.addEventListener("submit", commentBtnHandler);
 
+let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTM5MDEzLCJpYXQiOjE2OTIxMzE4MTMsImp0aSI6IjU1YjBlZjUwYWU5ZTRkZWJiYzU3YmE5NjFjNzFjNjFhIiwidXNlcl9pZCI6MX0.wnKEFP_QLawdiptDirneutZgHtadg1-OxMGizPbJCD0";
+let getComment = "https://servicetori.site/api/posts/comments/";
+let postComment = "https://servicetori.site/api/posts/comments/";
 axios
-  .get(
-    "https://3.36.100.188/api/posts/comments/",
+  .get(getComment,
   )
   .then((response) => {
     let commentLength = response.data.length;
@@ -95,14 +96,13 @@ function commentBtnHandler(e){
     }
 
     axios
-    .post(
-      "https://servicetori.site/api/posts/comments/",
+    .post(postComment,
       {
         "post": 3,
         "content": input.value,
       },
         {
-          headers: {Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDQ3ODIzLCJpYXQiOjE2OTIwNDA2MjMsImp0aSI6IjNlNjEyMjUwNWI2MTRjNGI5N2RhNmY1Njk0OTY1NmY3IiwidXNlcl9pZCI6MX0.obM-GW5FCz6dbviXatdsqajQ5FajdewWzrjsp1bPcfE",},
+          headers: {Authorization: token,},
         }
     )
     .then((response) => {
