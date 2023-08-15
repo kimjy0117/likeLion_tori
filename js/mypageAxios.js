@@ -2,15 +2,15 @@ const userName = document.getElementById('userName');
 const userIntro = document.getElementById('userIntro');
 
 let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTM5MDEzLCJpYXQiOjE2OTIxMzE4MTMsImp0aSI6IjU1YjBlZjUwYWU5ZTRkZWJiYzU3YmE5NjFjNzFjNjFhIiwidXNlcl9pZCI6MX0.wnKEFP_QLawdiptDirneutZgHtadg1-OxMGizPbJCD0";
-let getUser = "https://servicetori.site/api/accounts/dj-rest-auth/user";
-let getPost = "https://servicetori.site/api/posts/posts/";
+let getUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
+let getPost = "https://api.servicetori.site/api/posts/posts/";
 
 // 유저 정보
 axios
     .get(getUser,
-    {
-        headers: {Authorization: token}
-    },
+    //{
+    //    headers: {Authorization: token}
+    //},
     )
     .then(function (response){
         let logo = "../img/logo80.svg";
