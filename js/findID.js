@@ -33,7 +33,7 @@ form.addEventListener("submit", (event) => {
   if (regex.test(phoneNumber) == true) {
     axios
       .post(
-        "http://3.36.100.188/api/accounts/smsauth/send",
+        "https://3.36.100.188/api/accounts/smsauth/send",
         {
           phone_number: phoneNumber,
         },
@@ -64,7 +64,7 @@ form2.addEventListener("submit", (event) => {
 
   axios
     .post(
-      "http://3.36.100.188/api/accounts/smsauth/confirm",
+      "https://3.36.100.188/api/accounts/smsauth/confirm",
       {
         phone_number: phoneNumber,
         auth_number: verifyNumber,
@@ -80,7 +80,7 @@ form2.addEventListener("submit", (event) => {
       alert("인증에 성공하였습니다.");
       axios
         .post(
-          "http://3.36.100.188/api/accounts/finduser",
+          "https://3.36.100.188/api/accounts/finduser",
           {
             phone_number: phoneNumber,
           },

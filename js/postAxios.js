@@ -38,7 +38,7 @@ function contentBtnHandler(e){
     alert(input)
     axios
     .post(
-      "http://3.36.100.188/api/posts/posts/",
+      "https://3.36.100.188/api/posts/posts/",
       {
         "title": titleInput,
         "content": input,

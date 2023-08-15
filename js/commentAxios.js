@@ -7,7 +7,7 @@ commentBtn.addEventListener("submit", commentBtnHandler);
 
 axios
   .get(
-    "http://3.36.100.188/api/posts/comments/",
+    "https://3.36.100.188/api/posts/comments/",
   )
   .then((response) => {
     let commentLength = response.data.length;
@@ -96,7 +96,7 @@ function commentBtnHandler(e){
 
     axios
     .post(
-      "http://3.36.100.188/api/posts/comments/",
+      "https://3.36.100.188/api/posts/comments/",
       {
         "post": 3,
         "content": input.value,

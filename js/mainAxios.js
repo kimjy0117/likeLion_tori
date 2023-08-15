@@ -5,7 +5,7 @@ const like = document.getElementById('likeIcon');
 const count = document.getElementById('count');
 
 axios
-    .get("http://3.36.100.188/api/posts/posts/32/",
+    .get("https://3.36.100.188/api/posts/posts/32/",
     {
         headers: {Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkxOTg0MDU3LCJpYXQiOjE2OTE5NzY4NTcsImp0aSI6ImE0NTUwZWU3NGViODQyZTM5OWEzYTE1MjFiZmI5N2Y3IiwidXNlcl9pZCI6MX0.UJBEQYxjpweEEhdx4j8pWTeU7xWM0TwwcPf2du0HmeQ"}
     },

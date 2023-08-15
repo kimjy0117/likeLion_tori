@@ -12,7 +12,7 @@ form_login.addEventListener("submit", (event) => {
 
   axios
     .post(
-      "http://3.36.100.188/api/accounts/dj-rest-auth/login",
+      "https://3.36.100.188/api/accounts/dj-rest-auth/login",
       {
         username: email,
         password: password,
