@@ -96,7 +96,7 @@ function createBulletin(length, data){
 
             userImg.src = "../img/logo20.svg";
             
-            img.src = "https://servicetori.site" + data[i].images[0].image;
+            img.src = "https://api.servicetori.site" + data[i].images[0].image;
             img.style.width = "165px";
             img.style.height = "198px";
             img.style.borderRadius = "20px";

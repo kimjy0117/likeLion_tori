@@ -2,6 +2,11 @@ const warning = document.querySelector("#warning");
 const contentBtn = document.querySelector("#profile-form");
 contentBtn.addEventListener("submit", profileBtnHandler);
 
+let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDM4MTEzLCJpYXQiOjE2OTIwMzA5MTMsImp0aSI6IjU4ZGM1MTY1OGMyODRkMGY5Y2YwYWY1YzIyY2U4ZjM4IiwidXNlcl9pZCI6MX0.WOox7-ELcbqJp1voIZz-LUzPGCSHrp_hR0CbmKUFur4";
+let patchUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
+
+let profile_img;
+
 function profileBtnHandler(e){
     e.preventDefault();
     const nickname = e.target.inputName.value;
@@ -13,13 +18,14 @@ function profileBtnHandler(e){
 
     axios
     .patch(
-      "https://servicetori.site/api/accounts/dj-rest-auth/user",
+      patchUser,
       {
         "nickname": nickname,
         "introduce": introduce,
+        "profile_img": profile_img,
       },
         {
-           headers: {Authorization:"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDM4MTEzLCJpYXQiOjE2OTIwMzA5MTMsImp0aSI6IjU4ZGM1MTY1OGMyODRkMGY5Y2YwYWY1YzIyY2U4ZjM4IiwidXNlcl9pZCI6MX0.WOox7-ELcbqJp1voIZz-LUzPGCSHrp_hR0CbmKUFur4",},
+           headers: {Authorization: token,},
         }
     )
     .then((response) => {
@@ -38,3 +44,16 @@ function profileBtnHandler(e){
     });
   }
 
+  document.querySelector('.cameraBtn').addEventListener('click', () => {
+    document.querySelector('#cameraInput').click();
+});
+
+function loadImage(event) {
+  const logo = document.querySelector('#logo');
+  profile_img = URL.createObjectURL(event.target.files[0]);
+  logo.src = profile_img;
+  logo.onload = () => {
+      URL.revokeObjectURL(logo.src);
+  };
+  console.log(profile_img);
+}

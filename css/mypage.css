@@ -187,3 +187,8 @@
     border-radius: 12px;
     border: 6px solid #ffffff;
 }
+
+p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,10 @@
+.headerContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.logoContainer{
+    align-items: center;
+    width: 160px;
+    padding-left: 25px;
+}

@@ -12,6 +12,9 @@ contentBtn3.addEventListener("click", type3);
 contentBtn4.addEventListener("click", type4);
 document.querySelector("#content-form").addEventListener("submit", contentBtnHandler);
 
+let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDk1MjQxLCJpYXQiOjE2OTIwODgwNDEsImp0aSI6ImIzZTQ0ODBmZWM0YjQxMDRiODg1YTAyMTZlNmFmYmY2IiwidXNlcl9pZCI6MX0.SGXk-M-dnoODH27XqtsKPysf-g3vAQqfyKunMpdMpYE"
+let postPost = "https://api.servicetori.site/api/posts/posts/";
+
 let category = "";
 
 function type1(){
@@ -38,7 +41,7 @@ function contentBtnHandler(e){
     alert(input)
     axios
     .post(
-      "https://servicetori.site/api/posts/posts/",
+      postPost,
       {
         "title": titleInput,
         "content": input,
@@ -47,7 +50,7 @@ function contentBtnHandler(e){
       },
         {
            headers: {
-            "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDk1MjQxLCJpYXQiOjE2OTIwODgwNDEsImp0aSI6ImIzZTQ0ODBmZWM0YjQxMDRiODg1YTAyMTZlNmFmYmY2IiwidXNlcl9pZCI6MX0.SGXk-M-dnoODH27XqtsKPysf-g3vAQqfyKunMpdMpYE",
+            "Authorization": token,
             "Content-Type": "application/json"
           },
         }

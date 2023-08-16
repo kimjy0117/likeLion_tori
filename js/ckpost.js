@@ -1,3 +1,6 @@
+let postImages = "https://api.servicetori.site/api/posts/images/";
+let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDk1MjQxLCJpYXQiOjE2OTIwODgwNDEsImp0aSI6ImIzZTQ0ODBmZWM0YjQxMDRiODg1YTAyMTZlNmFmYmY2IiwidXNlcl9pZCI6MX0.SGXk-M-dnoODH27XqtsKPysf-g3vAQqfyKunMpdMpYE"
+
 DecoupledEditor
 	.create( document.querySelector( '#editor-content' ), {
         placeholder: "내용을 입력하세요", 
@@ -32,10 +35,10 @@ class UploadAdapter {
                 data.append('file', file);
                 
                 axios
-                .post("https://servicetori.site/api/posts/images/", data,
+                .post(postImages, data,
                     {
                         headers: {
-                            'Authorization':"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDk1MjQxLCJpYXQiOjE2OTIwODgwNDEsImp0aSI6ImIzZTQ0ODBmZWM0YjQxMDRiODg1YTAyMTZlNmFmYmY2IiwidXNlcl9pZCI6MX0.SGXk-M-dnoODH27XqtsKPysf-g3vAQqfyKunMpdMpYE",
+                            'Authorization': token,
                         },
                     }
                 )

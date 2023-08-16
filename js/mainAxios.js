@@ -1,6 +1,6 @@
 let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTM5MDEzLCJpYXQiOjE2OTIxMzE4MTMsImp0aSI6IjU1YjBlZjUwYWU5ZTRkZWJiYzU3YmE5NjFjNzFjNjFhIiwidXNlcl9pZCI6MX0.wnKEFP_QLawdiptDirneutZgHtadg1-OxMGizPbJCD0";
-let getUser = "https://servicetori.site/api/accounts/dj-rest-auth/user";
-let getPost = "https://servicetori.site/api/posts/posts/";
+let getUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
+let getPost = "https://api.servicetori.site/api/posts/posts/";
 
 axios
     .get(getUser,
@@ -16,12 +16,36 @@ axios
     })
     .catch(function (error){
         //에러 시
-        alert("실패");
         console.log(error);
+        emptyUserIntro();
     })
     .finally(function(){
     //항상 실행되는 함수
     });
+
+    function userIntro(data){
+        document.getElementById('userName').innerHTML = data.nickname;
+        // document.querySelector("#userImg").src = data.profile_iamge;
+        document.getElementById("userImg").src = "../img/logo80.svg";
+
+        $(document).ready(function(){
+            $("#myTori").show();
+        })
+    }
+
+const userArea = document.getElementById('userArea');
+const category = document.getElementById('category');
+const line = document.getElementById('line');
+
+function emptyUserIntro(){
+        $(document).ready(function(){
+            $("#myTori").hide();
+            userArea.style.marginBottom = "30px";
+            category.style.marginTop = "30px";
+            line.style.color = "#00000033";
+        })
+        
+    }
 
 
 
@@ -41,18 +65,13 @@ axios
     })
     .catch(function (error){
         //에러 시
-        alert("실패");
         console.log(error);
     })
     .finally(function(){
      //항상 실행되는 함수
     });
 
-function userIntro(data){
-    document.getElementById('userName').innerHTML = data.nickname;
-    // document.querySelector("#userImg").src = data.profile_iamge;
-    document.getElementById("userImg").src = "../img/logo80.svg";
-}
+
 
 function createPost(length, data){
     const container = document.querySelector('.container');
@@ -72,10 +91,11 @@ function createPost(length, data){
             const userImg = document.createElement('img');
             const heartImg = document.createElement('img');
             const img = document.createElement('img');
+            const aTag = document.createElement('a');
 
             let title;
             
-            // 제목이 14자 이상일 경우 13자로 짜르기
+            // 제목이 14자 이상일 경우 13자로 자르기
             if(data[i].title.length>13){
                 title = data[i].title.substr(0,13) + "...";
             }
@@ -89,6 +109,11 @@ function createPost(length, data){
             divBottom.id = 'divBottom';
             divUser.id = 'divUser';
             divLike.id = 'divLike';
+
+            aTag.href="./bulletin.html";
+            aTag.addEventListener("click", function(){
+                changeId(data[i].id);
+            })
             
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";
@@ -105,8 +130,9 @@ function createPost(length, data){
 
             userImg.src = "../img/logo30.svg";
             heartImg.src = "../img/blueheart25.png";
+            divBox.style.color="black";
             
-            img.src = "https://servicetori.site" + data[i].images[0].image;
+            img.src = "https://api.servicetori.site" + data[i].images[0].image;
             img.style.width = "338px";
             img.style.height = "260px";
             img.style.borderTopLeftRadius = "10px";
@@ -126,6 +152,8 @@ function createPost(length, data){
             divBox.appendChild(divTitle);
             divBox.appendChild(divBottom);
 
+            aTag.appendChild(divBox);
+
             container.appendChild(divBox);       
         }
 
@@ -143,11 +171,12 @@ function createPost(length, data){
             const likeSpan = document.createElement('span');
             const userImg = document.createElement('img');
             const heartImg = document.createElement('img');
+            const aTag = document.createElement('a');
 
             let title;
             let content;
 
-            // 제목이 14자 이상일 경우 13자로 짜르기
+            // 제목이 14자 이상일 경우 13자로 자르기
             if(data[i].title.length>13){
                 title = data[i].title.substr(0,13) + "...";
             }
@@ -155,7 +184,7 @@ function createPost(length, data){
                 title = data[i].title;
             }
 
-            // 내용이 71자 이상일 경우 70자로 짜르기
+            // 내용이 71자 이상일 경우 70자로 자르기
             if(data[i].content.length>70){
                 content = data[i].content.substr(0, 70) + "...";
             }
@@ -169,6 +198,13 @@ function createPost(length, data){
             divBottom.id = 'divBottom';
             divUser.id = 'divUser';
             divLike.id = 'divLike';
+
+            aTag.href="./bulletin.html";
+            aTag.addEventListener("click", function(e){
+                e.preventDefault();
+                changeId(data[i].id);
+                alert(data[i].id);
+            })
 
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";
@@ -190,8 +226,8 @@ function createPost(length, data){
             likeSpan.style.fontWeight = "500";
 
             userImg.src = "../img/logo30.svg";
-
             heartImg.src = "../img/blueheart25.png";
+            divBox.style.color="black";
 
             divTop.appendChild(titleSpan);
             divContent.appendChild(contentSpan);
@@ -207,7 +243,9 @@ function createPost(length, data){
             divBox.appendChild(divContent);
             divBox.appendChild(divBottom);
 
-            container.appendChild(divBox);            
+            aTag.appendChild(divBox);
+
+            container.appendChild(aTag);       
         }
     }
 }

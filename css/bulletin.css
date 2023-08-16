@@ -66,6 +66,8 @@
     background-color: #50bb4e;
     font-weight: 700;
     font-size: 18px;
+    position: relative;
+    top: -10px;
   }
   
   .upperMenu a {
@@ -81,8 +83,8 @@
 
   .title{
     width: 340px;
-    height: 33px;
     text-align: left;
+    margin-top: 34px;
     margin-bottom: 35px;
     font-size: 35px;
     font-weight: 700;
@@ -92,9 +94,12 @@
     display: flex;
     flex-direction: row;
     width: 340px;
-    height: 26px;
-    margin-bottom: 11px;
+    height: 45px;
+    padding-bottom: 11px;
     align-items: center;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #8b8b8b4d;
   }
 
   #date{
@@ -119,23 +124,36 @@
     width: 340px;
     height: 500px;
     text-align: left;
-    border-top: solid;
-    border-width: 1px;
-    border-color: #8b8b8b4d;
   }
 
-  .container {
+  .main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-left: 25px;
-    height: 650px;
+  }
+
+  .container{
+    height: 540px;
+    width: 360px;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
 
   .container::-webkit-scrollbar {
-      display: none;
+    width: 16px;
+    height: 16px;
   }
+  
+.container::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+  
+.container::-webkit-scrollbar-thumb {
+    background-color: #0000004d;
+    border-radius: 12px;
+    border: 6px solid #ffffff;
+}
 
   .bottomContainer{
     display: flex;
@@ -153,4 +171,8 @@
     background-color: transparent;
     border: none;
     margin-left: 15px;
+  }
+
+  img{
+    max-width: 340px;
   }

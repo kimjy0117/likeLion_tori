@@ -28,6 +28,13 @@
     position: relative;
   }
 
+  #logo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
   .camera{
     width: 40px;
     height: 40px;
