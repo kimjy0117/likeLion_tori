@@ -24,39 +24,43 @@ DecoupledEditor
 		console.error( err.stack );
 	} );
 
-class UploadAdapter {
-    constructor(loader) {
-        this.loader = loader;
-    }
-    upload() {
-        return this.loader.file
+    class UploadAdapter {
+        constructor(loader) {
+            this.loader = loader;
+        }
+        upload() {
+            return this.loader.file
             .then(file => new Promise(async(resolve, reject) => {
                 const data = new FormData();
                 data.append('file', file);
                 
                 axios
-                .post(postImages, data,
+                .post("https://api.servicetori.site/api/posts/images/", data,
                     {
-                        headers: {
-                            'Authorization': token,
-                        },
-                    }
+                        withCredentials: true,
+                    },
                 )
                 .then((response) => {
                     console.log(response.data);
+                    uploadImagesId.push(response.data.id);
                     resolve({ default: response.data.url });
                 })
-
+    
                 .catch((error) => {
                     console.error(error);
                     reject(err);
                 });
                 
             }));
+        }
+    
+        abort() {
+            const index = uploadImagesId.indexOf(this.loader.id);
+            if (index > -1) {
+              uploadImagesId.splice(index, 1);
+            }
+        }
     }
-
-    abort() {}
-}
 
 function getImages(editor) {
     const imageElements = Array.from(editor.model.document.getRoot().getChildren()).filter(item => item.is('image'));

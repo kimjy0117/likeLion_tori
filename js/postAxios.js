@@ -47,7 +47,7 @@ function contentBtnHandler(e){
       {
         "title": titleInput,
         "content": input,
-        "images": images,
+        uploadImagesId: images,
         "category": category,
       },
         {

@@ -50,7 +50,7 @@ getVerifyNum.addEventListener("click", (event) => {
   const phone_number = document.querySelector("#phone_number").value;
   axios
     .post(
-      "http://api.servicetori.site/api/accounts/smsauth/send",
+      "https://api.servicetori.site/api/accounts/smsauth/send",
       {
         phone_number: phone_number,
       },
@@ -75,7 +75,7 @@ resend.addEventListener("click", (event) => {
   const phone_number = document.querySelector("#phone_number").value;
   axios
     .post(
-      "http://api.servicetori.site/api/accounts/smsauth/send",
+      "https://api.servicetori.site/api/accounts/smsauth/send",
       {
         phone_number: phone_number,
       },
@@ -101,7 +101,7 @@ checkVerifyNum.addEventListener("click", (event) => {
   const auth_number = document.querySelector("#auth_number").value;
   axios
     .post(
-      "http://api.servicetori.site/api/accounts/smsauth/confirm",
+      "https://api.servicetori.site/api/accounts/smsauth/confirm",
       {
         phone_number: phone_number,
         auth_number: auth_number,
@@ -137,7 +137,7 @@ form.addEventListener("submit", (event) => {
 
   axios
     .post(
-      "http://api.servicetori.site/api/accounts/dj-rest-auth/registration",
+      "https://api.servicetori.site/api/accounts/dj-rest-auth/registration",
       {
         username: username,
         nickname: nickname,

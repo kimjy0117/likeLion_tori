@@ -12,7 +12,7 @@ form_login.addEventListener("submit", (event) => {
 
   axios
     .post(
-      "http://api.servicetori.site/api/accounts/dj-rest-auth/login",
+      "https://api.servicetori.site/api/accounts/dj-rest-auth/login",
       {
         username: email,
         password: password,
