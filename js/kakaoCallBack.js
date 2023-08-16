@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
   let code = new URL(window.location.href).searchParams.get("code");
   axios
     .post(
-      "https://api.servicetori.site/api/accounts/social/kakao/login/finish",
+      "https://api.servicetori.site/api/accounts/social/kakao/callback",
       {
         code: code,
       },
