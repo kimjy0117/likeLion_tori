@@ -97,7 +97,7 @@
     padding-top: 43px;
   }
 
-  .rectangle{
+  #rectangle{
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -110,9 +110,15 @@
     border-radius: 20px;
     margin-left: 20px;
     margin-bottom: 14px;
+    padding-top: 1px;
     background-color: white;
     text-align: left;
-  }
+    color: black;
+   }
+
+   #aTag{
+    text-decoration: none;
+   }
 
   #divTitle{
     width: 127px;
@@ -179,13 +185,13 @@
   }
   
 .container::-webkit-scrollbar-track {
-    background: #ffffff;
+    background: #F0F0F0;
   }
   
 .container::-webkit-scrollbar-thumb {
     background-color: #0000004d;
     border-radius: 12px;
-    border: 6px solid #ffffff;
+    border: 6px solid #F0F0F0;
 }
 
 p{

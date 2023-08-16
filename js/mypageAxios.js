@@ -1,7 +1,7 @@
 const userName = document.getElementById('userName');
 const userIntro = document.getElementById('userIntro');
 
-let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ";
+let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjI1NjY1LCJpYXQiOjE2OTIyMTg0NjUsImp0aSI6IjExNWI2MTZiZjc3YzQwNjQ5NjJiYWQwMDE1ZTgwMTA4IiwidXNlcl9pZCI6MX0.B7j3uumLiWg-3VEF9y8oolGWxRDJBdNtazZqbRWq2AM";
 let getUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
 let get1Post = "https://api.servicetori.site/api/posts/posts/?mypage=posts";
 let get2Post = "https://api.servicetori.site/api/posts/posts/?mypage=comments";
@@ -19,6 +19,8 @@ axios
          }
     )
     .then(function (response){
+
+        // let logo = response.data.profile_image;
         let logo = "../img/logo80.svg";
         let nickname = response.data.nickname;
         let introduce = response.data.introduce;
@@ -42,7 +44,7 @@ axios
     )
     .then(function (response){
         //성공 시
-        // alert("성공");
+        alert("성공1");
         console.log(response);
     
         let postLength = response.data.length;
@@ -52,7 +54,7 @@ axios
         }
 
         else{
-            emptyDataHandler();
+            emptyDataHandler1();
         }
     })
     .catch(function (error){
@@ -70,7 +72,7 @@ axios
     )
     .then(function (response){
         //성공 시
-        // alert("성공");
+        alert("성공2");
         console.log(response);
         
         let postLength = response.data.length;
@@ -80,7 +82,7 @@ axios
         }
 
         else{
-            emptyDataHandler();
+            emptyDataHandler2();
         }
     })
 
@@ -99,7 +101,7 @@ axios
     )
     .then(function (response){
         //성공 시
-        // alert("성공");
+        alert("성공3");
         console.log(response);
         
         let postLength = response.data.length;
@@ -109,7 +111,7 @@ axios
         }
 
         else{
-            emptyDataHandler();
+            emptyDataHandler3();
         }
     })
     .catch(function (error){
@@ -130,11 +132,15 @@ function createBulletin1(length, data){
             const userImg = document.createElement('img');
             const titlespan = document.createElement('span');
             const userspan = document.createElement('span');
+            const aTag = document.createElement('a');
 
             div.id = 'bulletinPost';
             divIntro.id = 'divIntro';
             divtitle.id = 'divtitle';
             divuser.id = 'divuser';
+            aTag.id = 'aTag';
+
+            aTag.href=`./bulletin.html?id=${data[i].id}`;
 
             titlespan.innerHTML = data[i].title;
             titlespan.style.fontSize = "20px";
@@ -153,7 +159,7 @@ function createBulletin1(length, data){
             img.style.width = "165px";
             img.style.height = "198px";
             img.style.borderRadius = "20px";
-            
+                        
             divtitle.appendChild(titlespan);
             divuser.appendChild(userImg);
             divuser.appendChild(userspan);
@@ -163,7 +169,10 @@ function createBulletin1(length, data){
 
             div.appendChild(img);
             div.appendChild(divIntro);
-            rectangle1.appendChild(div);
+
+            aTag.appendChild(div);
+
+            rectangle1.appendChild(aTag);
         }
 
         else {
@@ -176,6 +185,8 @@ function createBulletin1(length, data){
                 const textSpan = document.createElement('span');
                 const userSpan = document.createElement('span');
                 const userImg = document.createElement('img');
+                const aTag = document.createElement('a');
+
                 let text;
 
                 if(data[i].content.length > 50){
@@ -190,6 +201,9 @@ function createBulletin1(length, data){
                 divTitle.id = 'divTitle';
                 divContent.id = 'divContent';
                 divUser.id = 'divUser';
+                aTag.id = 'aTag';
+
+                aTag.href=`./bulletin.html?id=${data[i].id}`;
                 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -205,6 +219,8 @@ function createBulletin1(length, data){
                 userSpan.style.fontSize = "11px";
                 userSpan.style.fontWeight = "600";
                 userSpan.style.marginLeft = "5px";
+
+                div.style.color = "black";
             
                 divTitle.appendChild(titleSpan);
                 divContent.appendChild(textSpan);
@@ -215,7 +231,9 @@ function createBulletin1(length, data){
                 div.appendChild(divContent);
                 div.appendChild(divUser);
 
-                rectangle2.appendChild(div);
+                aTag.appendChild(div);
+
+                rectangle1.appendChild(aTag);
              }
 
              else{
@@ -225,10 +243,14 @@ function createBulletin1(length, data){
                 const titleSpan = document.createElement('span');
                 const userSpan = document.createElement('span');
                 const userImg = document.createElement('img');
+                const aTag = document.createElement('a');
 
                 div.id = `bulletinPost`;
                 divTitle1.id = 'divTitle1';
                 divUser.id = 'divUser';
+                aTag.id = 'aTag';
+
+                aTag.href=`./bulletin.html?id=${data[i].id}`;
                 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -248,7 +270,9 @@ function createBulletin1(length, data){
                 div.appendChild(divTitle1);
                 div.appendChild(divUser);
 
-                rectangle2.appendChild(div);
+                aTag.appendChild(div);
+
+                rectangle1.appendChild(aTag);
             }
         }
     }
@@ -266,11 +290,15 @@ function createBulletin2(length, data){
             const userImg = document.createElement('img');
             const titlespan = document.createElement('span');
             const userspan = document.createElement('span');
+            const aTag = document.createElement('a');
 
             div.id = 'bulletinPost';
             divIntro.id = 'divIntro';
             divtitle.id = 'divtitle';
             divuser.id = 'divuser';
+            aTag.id = 'aTag';
+
+            aTag.href=`./bulletin.html?id=${data[i].id}`;
 
             titlespan.innerHTML = data[i].title;
             titlespan.style.fontSize = "20px";
@@ -299,7 +327,10 @@ function createBulletin2(length, data){
 
             div.appendChild(img);
             div.appendChild(divIntro);
-            rectangle2.appendChild(div);
+
+            aTag.appendChild(div);
+
+            rectangle2.appendChild(aTag);
         }
 
         else {
@@ -312,6 +343,7 @@ function createBulletin2(length, data){
                 const textSpan = document.createElement('span');
                 const userSpan = document.createElement('span');
                 const userImg = document.createElement('img');
+                const aTag = document.createElement('a');
                 let text;
 
                 if(data[i].content.length > 50){
@@ -326,7 +358,10 @@ function createBulletin2(length, data){
                 divTitle.id = 'divTitle';
                 divContent.id = 'divContent';
                 divUser.id = 'divUser';
+                aTag.id = 'aTag';
                 
+                aTag.href=`./bulletin.html?id=${data[i].id}`;
+
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
                 titleSpan.style.fontWeight = "700";
@@ -351,7 +386,9 @@ function createBulletin2(length, data){
                 div.appendChild(divContent);
                 div.appendChild(divUser);
 
-                rectangle2.appendChild(div);
+                aTag.appendChild(div);
+
+                rectangle2.appendChild(aTag);
              }
 
              else{
@@ -361,11 +398,15 @@ function createBulletin2(length, data){
                 const titleSpan = document.createElement('span');
                 const userSpan = document.createElement('span');
                 const userImg = document.createElement('img');
+                const aTag = document.createElement('a');
 
                 div.id = `bulletinPost`;
                 divTitle1.id = 'divTitle1';
                 divUser.id = 'divUser';
+                aTag.id = 'aTag';
                 
+                aTag.href=`./bulletin.html?id=${data[i].id}`;
+
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
                 titleSpan.style.fontWeight = "700";
@@ -384,7 +425,9 @@ function createBulletin2(length, data){
                 div.appendChild(divTitle1);
                 div.appendChild(divUser);
 
-                rectangle2.appendChild(div);
+                aTag.appendChild(div);
+
+                rectangle2.appendChild(aTag);
             }
         }
     }
@@ -402,11 +445,15 @@ function createBulletin3(length, data){
             const userImg = document.createElement('img');
             const titlespan = document.createElement('span');
             const userspan = document.createElement('span');
+            const aTag = document.createElement('a');
 
             div.id = 'bulletinPost';
             divIntro.id = 'divIntro';
             divtitle.id = 'divtitle';
             divuser.id = 'divuser';
+            aTag.id = 'aTag';
+
+            aTag.href=`./bulletin.html?id=${data[i].id}`;
 
             titlespan.innerHTML = data[i].title;
             titlespan.style.fontSize = "20px";
@@ -435,7 +482,10 @@ function createBulletin3(length, data){
 
             div.appendChild(img);
             div.appendChild(divIntro);
-            rectangle3.appendChild(div);
+            
+            aTag.appendChild(div);
+
+            rectangle3.appendChild(aTag);
         }
 
         else {
@@ -448,6 +498,7 @@ function createBulletin3(length, data){
                 const textSpan = document.createElement('span');
                 const userSpan = document.createElement('span');
                 const userImg = document.createElement('img');
+                const aTag = document.createElement('a');
                 let text;
 
                 if(data[i].content.length > 50){
@@ -462,6 +513,9 @@ function createBulletin3(length, data){
                 divTitle.id = 'divTitle';
                 divContent.id = 'divContent';
                 divUser.id = 'divUser';
+                aTag.id = 'aTag';
+
+                aTag.href=`./bulletin.html?id=${data[i].id}`;
                 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -487,7 +541,9 @@ function createBulletin3(length, data){
                 div.appendChild(divContent);
                 div.appendChild(divUser);
 
-                rectangle3.appendChild(div);
+                aTag.appendChild(div);
+
+                rectangle3.appendChild(aTag);
              }
 
              else{
@@ -497,10 +553,14 @@ function createBulletin3(length, data){
                 const titleSpan = document.createElement('span');
                 const userSpan = document.createElement('span');
                 const userImg = document.createElement('img');
+                const aTag = document.createElement('a');
 
                 div.id = `bulletinPost`;
                 divTitle1.id = 'divTitle1';
                 divUser.id = 'divUser';
+                aTag.id = 'aTag';
+
+                aTag.href=`./bulletin.html?id=${data[i].id}`;
                 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -520,15 +580,16 @@ function createBulletin3(length, data){
                 div.appendChild(divTitle1);
                 div.appendChild(divUser);
 
-                rectangle3.appendChild(div);
+                aTag.appendChild(div);
+
+                rectangle3.appendChild(aTag);
             }
         }
     }
 }    
 
-// data가 비었을 경우
-function emptyDataHandler(){
-    const rectangle = document.querySelector('#rectangle');
+// 작성한 글 data가 비었을 경우
+function emptyDataHandler1(){
     const span = document.createElement('span');
 
     span.innerHTML = "해당하는 글이 존재하지 않습니다.";
@@ -537,5 +598,31 @@ function emptyDataHandler(){
     span.style.fontColor = "#00000080";
     span.style.marginLeft = "14px";  
     
-    rectangle.appendChild(span);
+    rectangle1.appendChild(span);
+}
+
+// 댓글단 글 data가 비었을 경우
+function emptyDataHandler2(){
+    const span = document.createElement('span');
+
+    span.innerHTML = "해당하는 글이 존재하지 않습니다.";
+    span.style.fontSize = "20px";
+    span.style.fontWeight = "700";
+    span.style.fontColor = "#00000080";
+    span.style.marginLeft = "14px";  
+    
+    rectangle2.appendChild(span);
+}
+
+// 좋아요한 글 data가 비었을 경우
+function emptyDataHandler3(){
+    const span = document.createElement('span');
+
+    span.innerHTML = "해당하는 글이 존재하지 않습니다.";
+    span.style.fontSize = "20px";
+    span.style.fontWeight = "700";
+    span.style.fontColor = "#00000080";
+    span.style.marginLeft = "14px";  
+    
+    rectangle3.appendChild(span);
 }

@@ -1,6 +1,6 @@
 let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjI1NjY1LCJpYXQiOjE2OTIyMTg0NjUsImp0aSI6IjExNWI2MTZiZjc3YzQwNjQ5NjJiYWQwMDE1ZTgwMTA4IiwidXNlcl9pZCI6MX0.B7j3uumLiWg-3VEF9y8oolGWxRDJBdNtazZqbRWq2AM";
 let getUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
-let getPost = "https://api.servicetori.site/api/posts/posts/";
+let getPost = "https://api.servicetori.site/api/posts/posts/?categoryId=3";
 
 axios
     .get(getUser,

@@ -2,15 +2,40 @@ const warning = document.querySelector("#warning");
 const contentBtn = document.querySelector("#profile-form");
 contentBtn.addEventListener("submit", profileBtnHandler);
 
-let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ";
+let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjI5Njk3LCJpYXQiOjE2OTIyMjI0OTcsImp0aSI6IjgyOGZkZjQzNTVkMzQxMTdhZTg3YjBhMzg2MjYyZDRkIiwidXNlcl9pZCI6MX0.e76A1dDfDDwINFwGrv5qj-kxqRanklNA_WP2HjUhMzI";
 let patchUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
 
 let profile_img;
+
+
+
+document.querySelector('.cameraBtn').addEventListener('click', () => {
+  document.querySelector('#cameraInput').click();
+});
+
+function loadImage(event) {
+const logo = document.querySelector('#logo');
+profile_img = URL.createObjectURL(event.target.files[0]);
+logo.src = profile_img;
+logo.onload = () => {
+    URL.revokeObjectURL(logo.src);
+};
+console.log(profile_img);
+}
 
 function profileBtnHandler(e){
     e.preventDefault();
     const nickname = e.target.inputName.value;
     const introduce = e.target.inputIntro.value;
+    const formData = new FormData()
+    
+    
+    if(cameraInput.files[0]){
+      formData.append('profile_image', cameraInput.files[0]);
+    }
+
+    formData.append('nickname',nickname)
+    formData.append('introduce',introduce)
 
     if(nickname === "" || introduce === ""){
       return;
@@ -19,13 +44,9 @@ function profileBtnHandler(e){
     axios
     .patch(
       patchUser,
-      {
-        "nickname": nickname,
-        "introduce": introduce,
-        "profile_img": profile_img,
-      },
+        formData,
         {
-           headers: {Authorization: token,},
+           headers: {Authorization: token,'content-type': 'multipart/form-data',},
         }
     )
     .then((response) => {
@@ -43,17 +64,3 @@ function profileBtnHandler(e){
       warning.style.visibility = hidden;
     });
   }
-
-  document.querySelector('.cameraBtn').addEventListener('click', () => {
-    document.querySelector('#cameraInput').click();
-});
-
-function loadImage(event) {
-  const logo = document.querySelector('#logo');
-  profile_img = URL.createObjectURL(event.target.files[0]);
-  logo.src = profile_img;
-  logo.onload = () => {
-      URL.revokeObjectURL(logo.src);
-  };
-  console.log(profile_img);
-}

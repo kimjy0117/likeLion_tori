@@ -8,7 +8,7 @@ const count = document.getElementById('count');
 const searchParams = new URLSearchParams(location.search);
 let id = searchParams.get('id')
 
-let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTk1Njk3LCJpYXQiOjE2OTIxODg0OTcsImp0aSI6IjM5ZTBkOTY0NDA2YTQ0NWVhZTExNTU0M2NiMzhhN2EwIiwidXNlcl9pZCI6MX0.-IOnb2L0leNShOiDQl6uP5hjdUJDT_NU4eT7juYaI-g";
+let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjI2MDU2LCJpYXQiOjE2OTIyMTg4NTYsImp0aSI6IjA3YmZkYTI1MWFkMDRkZjM4YTJlMzFlYTU4MWYyMGI1IiwidXNlcl9pZCI6MX0.2HuTZOYLzRsEuYqSqDnSoljolsnR8v2SlCmq1BgzVnM";
 let getPost = "https://api.servicetori.site/api/posts/posts/";
 let postLike = `https://api.servicetori.site/api/posts/posts/${id}/like/`;
 
