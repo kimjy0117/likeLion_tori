@@ -47,8 +47,6 @@ function emptyUserIntro(){
         
     }
 
-
-
 axios
     .get(getPost,
     )
@@ -112,7 +110,7 @@ function createPost(length, data){
 
             aTag.href="./bulletin.html";
             aTag.addEventListener("click", function(){
-                changeId(data[i].id);
+                globalId = data[i].id;
             })
             
             titleSpan.innerHTML = title;
@@ -154,7 +152,7 @@ function createPost(length, data){
 
             aTag.appendChild(divBox);
 
-            container.appendChild(divBox);       
+            container.appendChild(aTag);       
         }
 
         // 이미지 파일이 없을때
@@ -200,10 +198,9 @@ function createPost(length, data){
             divLike.id = 'divLike';
 
             aTag.href="./bulletin.html";
-            aTag.addEventListener("click", function(e){
-                e.preventDefault();
+
+            aTag.addEventListener("click", function(){
                 changeId(data[i].id);
-                alert(data[i].id);
             })
 
             titleSpan.innerHTML = title;

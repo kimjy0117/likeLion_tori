@@ -5,15 +5,16 @@ const text = document.getElementById('text');
 const like = document.getElementById('likeIcon');
 const count = document.getElementById('count');
 
-let id = 2;
-function changeId(value){
-    id = value;
-    console.log(id);
-}
+let globalId = 0;
+
+// function changeId(newId){
+//     globalId = newId;
+// }
+
 
 let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTk1Njk3LCJpYXQiOjE2OTIxODg0OTcsImp0aSI6IjM5ZTBkOTY0NDA2YTQ0NWVhZTExNTU0M2NiMzhhN2EwIiwidXNlcl9pZCI6MX0.-IOnb2L0leNShOiDQl6uP5hjdUJDT_NU4eT7juYaI-g";
 let getPost = "https://api.servicetori.site/api/posts/posts/";
-let postLike = `https://api.servicetori.site/api/posts/posts/${id}/like/`;
+let postLike = `https://api.servicetori.site/api/posts/posts/${globalId}/like/`;
 
 axios
     .get(getPost,
@@ -21,13 +22,13 @@ axios
     .then(function (response){
         //성공 시
         console.log(response);
-        postHandler(response, id);       
+        postHandler(response, globalId);       
     })
     .catch(function (error){
         //에러 시
         alert("실패");
         console.log(error);
-        console.log(id);
+        console.log(globalId);
     })
     .finally(function(){
      //항상 실행되는 함수
