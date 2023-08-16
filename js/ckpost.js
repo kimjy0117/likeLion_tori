@@ -36,9 +36,6 @@ DecoupledEditor
                 
                 axios
                 .post("https://api.servicetori.site/api/posts/images/", data,
-                    {
-                        withCredentials: true,
-                    },
                 )
                 .then((response) => {
                     console.log(response.data);
@@ -48,7 +45,7 @@ DecoupledEditor
     
                 .catch((error) => {
                     console.error(error);
-                    reject(err);
+                    reject(error);
                 });
                 
             }));
