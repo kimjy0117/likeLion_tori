@@ -78,7 +78,7 @@ input {
   height: 52px;
   font-weight: 600;
   font-size: 16px;
-  color: #00000066;
+  color: black;
   outline: none;
   border-radius: 8px;
   border: none;
@@ -105,7 +105,6 @@ input {
 button {
   width: 200px;
   height: 46px;
-  padding: 11px 26px;
   margin: 0;
   background-color: #50bb4e;
   border: none;
@@ -113,6 +112,7 @@ button {
   font-size: 20px;
   font-weight: 700;
   color: white;
+  box-shadow: 0px 4px 4px 0px #00000026;
 }
 
 button :hover {
@@ -156,6 +156,10 @@ img {
 
 #kakaotalkImg {
   margin-left: 7px;
+}
+
+#kakaotalkImg:hover {
+  cursor: pointer;
 }
 
 button:hover {

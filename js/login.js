@@ -12,7 +12,7 @@ form_login.addEventListener("submit", (event) => {
 
   axios
     .post(
-      "https://api.servicetori.site/api/accounts/dj-rest-auth/login",
+      "http://api.servicetori.site/api/accounts/dj-rest-auth/login",
       {
         username: email,
         password: password,
@@ -24,8 +24,10 @@ form_login.addEventListener("submit", (event) => {
     .then((response) => {
       // 성공
       console.log(response); // test
+      const access = response.data.access;
+      sessionStorage.setItem("access", access);
+      window.location.href = "./login.html";
       alert("로그인에 성공하였습니다.");
-      // window.location.href = "./index.html";
     })
     .catch((error) => {
       // 실패
@@ -35,4 +37,38 @@ form_login.addEventListener("submit", (event) => {
       alert("로그인에 실패하였습니다.");
       warningText();
     });
+});
+
+const kakao = document.querySelector("#kakaotalkImg");
+kakao.addEventListener("click", (event) => {
+  window.location.href =
+    "https://api.servicetori.site/api/accounts/social/kakao/login";
+  // axios
+  //   .GET(
+  //     "https://servicetori.site/api/accounts/social/kakao/login",
+  //     {},
+  //     {
+  //       withCredentials: true,
+  //     }
+  //   )
+  //   .then((response) => {
+  //     // 성공
+  //     console.log(response); // test
+  //     alert("로그인에 성공하였습니다.");
+  //     // window.location.href = "./index.html";
+  //   })
+  //   .catch((error) => {
+  //     // 실패
+  //     console.error(error);
+
+  //     // warning.style.visibility = visible;
+  //     alert("로그인에 실패하였습니다.");
+  //     warningText();
+  //   });
+});
+
+const naver = document.querySelector("#naverImg");
+kakao.addEventListener("click", (event) => {
+  window.location.href =
+    "https://api.servicetori.site/api/accounts/social/naver/login";
 });

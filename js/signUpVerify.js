@@ -25,7 +25,7 @@ form.addEventListener("submit", (event) => {
   if (regex.test(phoneNumber) == true) {
     axios
       .post(
-        "https://api.servicetori.site/api/accounts/smsauth/send",
+        "http://api.servicetori.site/api/accounts/smsauth/send",
         {
           phone_number: phoneNumber,
         },
@@ -55,7 +55,7 @@ form2.addEventListener("submit", (event) => {
 
   axios
     .post(
-      "https://api.servicetori.site/api/accounts/smsauth/confirm",
+      "http://api.servicetori.site/api/accounts/smsauth/confirm",
       {
         phone_number: phoneNumber,
         auth_number: verifyNumber,

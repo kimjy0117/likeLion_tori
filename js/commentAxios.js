@@ -7,7 +7,7 @@ commentBtn.addEventListener("submit", commentBtnHandler);
 const searchParams = new URLSearchParams(location.search);
 let id = searchParams.get('id')
 
-let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjA4MjIwLCJpYXQiOjE2OTIyMDEwMjAsImp0aSI6IjM0ZWIzMWJiMDhhZTQ3OGE4N2ExY2M2NGU3N2M2N2IyIiwidXNlcl9pZCI6MX0.5Za6hG8of05H9_RG6H8paBq3pCuGq6PxwHvLAgxAY9I";
+let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ";
 let getComment = `https://api.servicetori.site/api/posts/comments/`;
 let postComment = "https://api.servicetori.site/api/posts/comments/";
 

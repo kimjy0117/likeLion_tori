@@ -16,20 +16,62 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <a href="../html/login.html">
-        <div class="goBack">
-          <span class="material-symbols-outlined"> arrow_back </span>
-        </div>
-        <img src="../img/logoCombined.svg" alt="로고이미지" />
-      </a>
-    </header>
-    <main>
-      <section id="section1"></section>
-      <section id="section2"></section>
-      <footer></footer>
-    </main>
+    <div id="app">
+      <header>
+        <a href="./index.html">
+          <div class="goBack">
+            <span class="material-symbols-outlined"> arrow_back </span>
+          </div>
+        </a>
+        <img id="logo" src="../img/logoCombined.svg" alt="로고이미지" />
+      </header>
+      <main>
+        <section id="innerContainer">
+          <div class="section1">
+            ' 토리 (土理) '<br />
+            메마르거나 기름진 흙의 성질
+          </div>
+          <div class="section2">
+            농업에 있어서 중요한 기반이 되는 토리처럼, <br />
+            저희 서비스 토리도 농업을 하시는 분들의 <br />
+            기반이 되어 도움을 드리겠습니다. <br />
+            <br />
+            토리를 사용해주시는 분들 도토리는 <br />
+            ‘do-토리’의 뜻을 담고 있습니다. <br />
+            토리에서 도토리들은 성별과 나이에 상관없이 <br />
+            자유롭게 소통합니다.
+          </div>
+          <span id="team">-팀 도토리-</span>
+        </section>
+        <section id="innerContainer">
+          <span id="steps">토리를 활용하는 방법 세 가지</span>
+          <ul>
+            <li><img src="../img/step1.svg" alt="방법 1" /></li>
+            <li><img src="../img/step2.svg" alt="방법 2" /></li>
+            <li><img src="../img/step3.svg" alt="방법 3" /></li>
+          </ul>
+        </section>
+        <footer>
+          <div class="staffContainer">
+            <span>-팀 도토리-</span>
+            <p>
+              기획/디자인 서경대학교 컴퓨터공학과21 윤주은<br />
+              프론트엔드 서경대학교 컴퓨터공학과19 김온유<br />
+              프론트엔드 서경대학교 소프트웨어학21 김주영<br />
+              백엔드 서경대학교 소프트웨어19 김영재 <br />
+              백엔드 서경대학교 소프트웨어18 정성엽
+            </p>
+          </div>
+        </footer>
+      </main>
+    </div>
   </body>
 </html>

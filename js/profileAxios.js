@@ -2,7 +2,7 @@ const warning = document.querySelector("#warning");
 const contentBtn = document.querySelector("#profile-form");
 contentBtn.addEventListener("submit", profileBtnHandler);
 
-let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDM4MTEzLCJpYXQiOjE2OTIwMzA5MTMsImp0aSI6IjU4ZGM1MTY1OGMyODRkMGY5Y2YwYWY1YzIyY2U4ZjM4IiwidXNlcl9pZCI6MX0.WOox7-ELcbqJp1voIZz-LUzPGCSHrp_hR0CbmKUFur4";
+let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ";
 let patchUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
 
 let profile_img;

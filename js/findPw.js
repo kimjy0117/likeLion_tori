@@ -8,7 +8,7 @@ form.addEventListener("submit", (event) => {
 
   axios
     .post(
-      "https://api.servicetori.site/api/accounts/dj-rest-auth/password/reset",
+      "http://api.servicetori.site/api/accounts/dj-rest-auth/password/reset",
       {
         username: username,
         phone_number: phone_number,

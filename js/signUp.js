@@ -13,25 +13,35 @@ function pwFail() {
   pwCheck.style.color = "#E70000";
 }
 function pwRexFail() {
-  pwCheck.innerText = "*두 비밀번호 모두 올바른 양식이 아닙니다.";
+  pwCheck.innerText = "*입력된 값이 올바른 양식이 아닙니다.";
   pwCheck.style.color = "#E70000";
 }
 function pwDefault() {
+  pwCheck.style.visibility = "";
   pwCheck.innerText = "*영문, 숫자, 특수기호 조합 9~15자리";
   pwCheck.style.color = "#2E3134";
 }
 
 function passwordCheck() {
-  // 향 후, 조건에 맞는 값이 들어왔을 때만 버튼 활성화 시키는 쪽으로 수정.
-  // -> boolean 으로 정규식 세 값이 따로 설정된 변수에 T가 되면 버튼 활성화
+  const regex =
+    /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{9,15}$/;
+  // 조건에 맞는 값이 들어왔을 때만 버튼 활성화 시키는 쪽으로 수정.
+  // 입력한 두 패스워드 일치 여부 / 유효성 판별
   const password1 = document.querySelector("#password1").value;
   const password2 = document.querySelector("#password2").value;
-  if (password1.length === 0 && password2.length == 0) pwDefault();
-  else if (regex.test(password1) == true && regex.test(password2) == true) {
-    if (password1.value === password2.value) {
-      pwPass();
-    } else pwFail();
-  } else pwRexFail();
+
+  if (password1.length === 0 && password2.length === 0) {
+    pwDefault();
+  } else {
+    if (regex.test(password1) === false || regex.test(password2) === false) {
+      pwRexFail();
+    } else {
+      if (password1 != password2) {
+        pwFail();
+      }
+      if (password1 == password2) pwPass();
+    }
+  }
 }
 // form 내부 안 input 지정하여 axios 처리
 const getVerifyNum = document.querySelector("#getVerifyNum");
@@ -40,7 +50,7 @@ getVerifyNum.addEventListener("click", (event) => {
   const phone_number = document.querySelector("#phone_number").value;
   axios
     .post(
-      "https://api.servicetori.site/api/accounts/smsauth/send",
+      "http://api.servicetori.site/api/accounts/smsauth/send",
       {
         phone_number: phone_number,
       },
@@ -65,7 +75,7 @@ resend.addEventListener("click", (event) => {
   const phone_number = document.querySelector("#phone_number").value;
   axios
     .post(
-      "https://api.servicetori.site/api/accounts/smsauth/send",
+      "http://api.servicetori.site/api/accounts/smsauth/send",
       {
         phone_number: phone_number,
       },
@@ -91,7 +101,7 @@ checkVerifyNum.addEventListener("click", (event) => {
   const auth_number = document.querySelector("#auth_number").value;
   axios
     .post(
-      "https://api.servicetori.site/api/accounts/smsauth/confirm",
+      "http://api.servicetori.site/api/accounts/smsauth/confirm",
       {
         phone_number: phone_number,
         auth_number: auth_number,
@@ -127,7 +137,7 @@ form.addEventListener("submit", (event) => {
 
   axios
     .post(
-      "https://api.servicetori.site/api/accounts/dj-rest-auth/registration",
+      "http://api.servicetori.site/api/accounts/dj-rest-auth/registration",
       {
         username: username,
         nickname: nickname,

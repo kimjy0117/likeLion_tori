@@ -12,20 +12,22 @@ contentBtn3.addEventListener("click", type3);
 contentBtn4.addEventListener("click", type4);
 document.querySelector("#content-form").addEventListener("submit", contentBtnHandler);
 
-let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDk1MjQxLCJpYXQiOjE2OTIwODgwNDEsImp0aSI6ImIzZTQ0ODBmZWM0YjQxMDRiODg1YTAyMTZlNmFmYmY2IiwidXNlcl9pZCI6MX0.SGXk-M-dnoODH27XqtsKPysf-g3vAQqfyKunMpdMpYE"
+let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ";
 let postPost = "https://api.servicetori.site/api/posts/posts/";
-
 let category = "";
 
 function type1(){
   category = "1";
 }
+
 function type2(){
   category = "2";
 }
+
 function type3(){
   category = "3";
 }
+
 function type4(){
   category = "4";
 }
@@ -38,7 +40,7 @@ function contentBtnHandler(e){
     if(input === "" || titleInput === ""){
       return;
     }
-    alert(input)
+    alert(input);
     axios
     .post(
       postPost,
@@ -70,4 +72,3 @@ function contentBtnHandler(e){
       warning.style.visibility = hidden;
     });
   }
-
