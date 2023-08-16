@@ -12,7 +12,7 @@ contentBtn3.addEventListener("click", type3);
 contentBtn4.addEventListener("click", type4);
 document.querySelector("#content-form").addEventListener("submit", contentBtnHandler);
 
-let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ";
+// let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ";
 let postPost = "https://api.servicetori.site/api/posts/posts/";
 let category = "";
 
@@ -47,16 +47,18 @@ function contentBtnHandler(e){
       {
         "title": titleInput,
         "content": input,
-        uploadImagesId: images,
+        "images": uploadImagesId,
         "category": category,
       },
-        {
-           headers: {
-            "Authorization": token,
-            "Content-Type": "application/json"
-          },
-        }
-    )
+      {
+        withCredentials: true,
+      },
+      {
+        headers: {
+         "Content-Type": "application/json"
+       },
+      }
+      )
     .then((response) => {
       // 성공
       console.log(response);
