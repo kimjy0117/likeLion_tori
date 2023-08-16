@@ -1,5 +1,7 @@
 let postImages = "https://api.servicetori.site/api/posts/images/";
+let uploadImagesId = [];
 // let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ"
+
 
 DecoupledEditor
 	.create( document.querySelector( '#editor-content' ), {
@@ -32,7 +34,7 @@ DecoupledEditor
             return this.loader.file
             .then(file => new Promise(async(resolve, reject) => {
                 const data = new FormData();
-                data.append('file', file);
+                data.append('image', file);
                 
                 axios
                 .post("https://api.servicetori.site/api/posts/images/", data,
