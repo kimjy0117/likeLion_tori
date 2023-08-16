@@ -5,16 +5,12 @@ const text = document.getElementById('text');
 const like = document.getElementById('likeIcon');
 const count = document.getElementById('count');
 
-let globalId = 0;
-
-// function changeId(newId){
-//     globalId = newId;
-// }
-
+const searchParams = new URLSearchParams(location.search);
+let id = searchParams.get('id')
 
 let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTk1Njk3LCJpYXQiOjE2OTIxODg0OTcsImp0aSI6IjM5ZTBkOTY0NDA2YTQ0NWVhZTExNTU0M2NiMzhhN2EwIiwidXNlcl9pZCI6MX0.-IOnb2L0leNShOiDQl6uP5hjdUJDT_NU4eT7juYaI-g";
 let getPost = "https://api.servicetori.site/api/posts/posts/";
-let postLike = `https://api.servicetori.site/api/posts/posts/${globalId}/like/`;
+let postLike = `https://api.servicetori.site/api/posts/posts/${id}/like/`;
 
 axios
     .get(getPost,
@@ -22,19 +18,20 @@ axios
     .then(function (response){
         //성공 시
         console.log(response);
-        postHandler(response, globalId);       
+        postHandler(response, id);
+        commentBtnHandler(id);
     })
     .catch(function (error){
         //에러 시
         alert("실패");
         console.log(error);
-        console.log(globalId);
     })
     .finally(function(){
      //항상 실행되는 함수
     });
 
     function postHandler(response, id){
+        id = response.data.length - id;
         let logo = "../img/logo30.svg";
         let time = response.data[id].created_at.split('-');
         let time1 = time[0]+"."+time[1]+"."+time[2];
@@ -42,12 +39,23 @@ axios
         let nickname = response.data[id].writer;
         let titleText = response.data[id].title;
         let contentText = response.data[id].content;
+        let newText;
+
+        if(titleText.indexOf("http://3.36.100.188") !== -1 ){
+            newText = titleText.split('http://3.36.100.188');
+            titleText = newText[0]+"https://api.servicetori.site"+newText[1];
+        }
         
         document.getElementById('logo').src= logo;
         title.innerHTML = titleText;
         date.innerHTML = redate;
         userName.innerHTML = nickname;
         text.innerHTML = contentText;
+    }
+
+    function commentBtnHandler(id){
+        let chatIcon = document.getElementById('chatA');
+        chatIcon.href = `./comment.html?id=${id}`;
     }
 
 let blikeIcon = "../img/heart.png";
@@ -79,14 +87,13 @@ function likeEvent(){
         })
         .then((response) => {
             // 성공
-            console.log(response);
-            alert("좋아요를 눌렀습니다.");    
+            console.log(response);    
         })
 
         .catch((error) => {
             // 실패
             console.error(error);
-            alert("좋아요 실패하였습니다.");
+            alert("로그인 후 시도해주세요.");
             warning.style.visibility = hidden;
     });
 

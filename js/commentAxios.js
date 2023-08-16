@@ -4,16 +4,25 @@ const bottomArea = document.getElementById('bottomArea');
 const commentBtn = document.querySelector("#comment-form");
 commentBtn.addEventListener("submit", commentBtnHandler);
 
-let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMTM5MDEzLCJpYXQiOjE2OTIxMzE4MTMsImp0aSI6IjU1YjBlZjUwYWU5ZTRkZWJiYzU3YmE5NjFjNzFjNjFhIiwidXNlcl9pZCI6MX0.wnKEFP_QLawdiptDirneutZgHtadg1-OxMGizPbJCD0";
-let getComment = "https://api.servicetori.site/api/posts/comments/";
+const searchParams = new URLSearchParams(location.search);
+let id = searchParams.get('id')
+
+let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjA4MjIwLCJpYXQiOjE2OTIyMDEwMjAsImp0aSI6IjM0ZWIzMWJiMDhhZTQ3OGE4N2ExY2M2NGU3N2M2N2IyIiwidXNlcl9pZCI6MX0.5Za6hG8of05H9_RG6H8paBq3pCuGq6PxwHvLAgxAY9I";
+let getComment = `https://api.servicetori.site/api/posts/comments/`;
 let postComment = "https://api.servicetori.site/api/posts/comments/";
+
 axios
-  .get(getComment,
-  )
+  .get(getComment,{
+    params: {
+      postId: id
+    }
+  })
+  
   .then((response) => {
+    console.log(response);
     let commentLength = response.data.length;
     createComment(commentLength, response.data);
-
+    backBtnHandler(id);
   })
   .catch(function (error){
     //에러 시
@@ -23,6 +32,11 @@ axios
   .finally(function(){
   //항상 실행되는 함수
   });
+
+function backBtnHandler(id){
+  let backBtn = document.getElementById('backBtn');
+  backBtn.href = `./bulletin.html?id=${id}`;
+}
 
 function createComment(length, data){
   const commentArea = document.querySelector('.commentArea');
@@ -54,8 +68,8 @@ function createComment(length, data){
     userImg.src = "../img/logo30.svg";
   
     // 백에서 writer값 수정 되면 수정
-    // userSpan.innerHTML = data[i].writer;
-    userSpan.innerHTML = "농부좋아";
+    userSpan.innerHTML = data[i].writer;
+    // userSpan.innerHTML = "농부좋아";
     userSpan.style.fontSize = "16px";
     userSpan.style.fontWeight = "600";
     userSpan.style.marginLeft = "7px";
@@ -98,7 +112,7 @@ function commentBtnHandler(e){
     axios
     .post(postComment,
       {
-        "post": 3,
+        "post": id,
         "content": input.value,
       },
         {

@@ -108,11 +108,8 @@ function createPost(length, data){
             divUser.id = 'divUser';
             divLike.id = 'divLike';
 
-            aTag.href="./bulletin.html";
-            aTag.addEventListener("click", function(){
-                globalId = data[i].id;
-            })
-            
+            aTag.href=`./bulletin.html?id=${data[i].id}`;
+           
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";
             titleSpan.style.fontWeight = "700";
@@ -197,11 +194,7 @@ function createPost(length, data){
             divUser.id = 'divUser';
             divLike.id = 'divLike';
 
-            aTag.href="./bulletin.html";
-
-            aTag.addEventListener("click", function(){
-                changeId(data[i].id);
-            })
+            aTag.href=`./bulletin.html?id=${data[i].id}`;
 
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";
