@@ -26,7 +26,7 @@ axios
     });
 
     function userIntro(data){
-        let userImg = data.profile_iamge;
+        let userImg = data.profile_image;
         document.getElementById('userName').innerHTML = data.nickname;
 
         if(userImg == null){

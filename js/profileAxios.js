@@ -53,7 +53,7 @@ function profileBtnHandler(e){
       console.log(response);
       alert("프로필이 변경되었습니다.");
       e.target.reset();
-      // window.location.href = "./bulletin.html";      
+      window.location.href = "./index.html";      
      })
 
     .catch((error) => {
