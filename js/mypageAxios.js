@@ -20,13 +20,17 @@ axios
          }
     )
     .then(function (response){
-
-        // let logo = response.data.profile_image;
-        let logo = "../img/logo80.svg";
+        let userImg = data.profile_image;
         let nickname = response.data.nickname;
         let introduce = response.data.introduce;
+
+        if(userImg == null){
+            document.getElementById("logo").src = "../img/logo80.svg";
+        }
+        else{
+            document.getElementById("logo").src = userImg;
+        }
         
-        document.getElementById('logo').src = logo;
         userName.innerHTML = nickname;
         userIntro.innerHTML = introduce;
     })

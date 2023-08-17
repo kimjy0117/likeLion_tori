@@ -67,7 +67,8 @@ function createComment(length, data){
       const patchSpan = document.createElement('span');
       const deleteSpan = document.createElement('span');
       const sepSpan = document.createElement('span');
-
+      
+      let userImage = data[i].profile_image;
       let bedate = data[i].created_at.split('-');
       let time1 = bedate[0]+"."+bedate[1]+"."+bedate[2];
       let date = time1.split('T')[0];
@@ -90,7 +91,12 @@ function createComment(length, data){
       patchATag.href = `./commentPatch.html?id=${id}&postNum=${postNum}&commentId=${data[i].id}`;
       patchATag.style.textDecoration = "none";
 
-      userImg.src = "../img/logo30.svg";
+      if(userImage == null){
+        document.getElementById("logo").src = "../img/logo30.svg";
+      }
+      else{
+          document.getElementById("logo").src = userImage;
+      }
 
       userSpan.innerHTML = data[i].writer;
       userSpan.style.fontSize = "16px";

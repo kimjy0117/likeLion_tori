@@ -176,7 +176,7 @@ form.addEventListener("submit", (event) => {
   };
 
   axios
-    .post(
+    .get(
       "https://api.servicetori.site/api/posts/posts",
       {
         params: params,
