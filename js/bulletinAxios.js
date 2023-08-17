@@ -39,28 +39,27 @@ axios
      //항상 실행되는 함수
     });
 
+// 포스트 보여지는 함수
+function postHandler(response, postId){
+    let logo = "../img/logo30.svg";
+    let time = response.data[postId].created_at.split('-');
+    let time1 = time[0]+"."+time[1]+"."+time[2];
+    let redate = time1.split('T')[0];
+    let nickname = response.data[postId].writer;
+    let titleText = response.data[postId].title;
+    let contentText = response.data[postId].content;
+    let newText;
 
-    // 포스트 보여지는 함수
-    function postHandler(response, postId){
-        let logo = "../img/logo30.svg";
-        let time = response.data[postId].created_at.split('-');
-        let time1 = time[0]+"."+time[1]+"."+time[2];
-        let redate = time1.split('T')[0];
-        let nickname = response.data[postId].writer;
-        let titleText = response.data[postId].title;
-        let contentText = response.data[postId].content;
-        let newText;
-
-        if(titleText.indexOf("http://3.36.100.188") !== -1 ){
-            newText = titleText.split('http://3.36.100.188');
-            titleText = newText[0]+"https://api.servicetori.site"+newText[1];
-        }
-        
-        document.getElementById('logo').src= logo;
-        title.innerHTML = titleText;
-        date.innerHTML = redate;
-        userName.innerHTML = nickname;
-        text.innerHTML = contentText;
+    if(titleText.indexOf("http://3.36.100.188") !== -1 ){
+        newText = titleText.split('http://3.36.100.188');
+        titleText = newText[0]+"https://api.servicetori.site"+newText[1];
+    }
+    
+    document.getElementById('logo').src= logo;
+    title.innerHTML = titleText;
+    date.innerHTML = redate;
+    userName.innerHTML = nickname;
+    text.innerHTML = contentText;
     }
 
     function commentBtnHandler(id){
@@ -68,8 +67,7 @@ axios
         chatIcon.href = `./comment.html?id=${id}&postNum=${postNum}`;
     }
 
-
-function getUserDataHandler(postWriter){
+    function getUserDataHandler(postWriter){
     // 유저 정보 가져오기
     axios
     .get(getUser,
@@ -92,12 +90,8 @@ function getUserDataHandler(postWriter){
     })
     .catch(function (error){
         //에러 시
-        
         console.log(error);
     })
-    .finally(function(){
-     //항상 실행되는 함수
-    });
 };
 
     function createPatchDelBtn(){
@@ -117,7 +111,6 @@ function getUserDataHandler(postWriter){
         patchATag.href = `./postPatch.html?id=${id}&postNum=${postNum}`;
         patchATag.style.textDecoratio = "none";
 
-        
         patchSpan.innerHTML = "수정";
         patchSpan.style.fontSize = "20px";
         patchSpan.style.fontWeight = "600";
