@@ -79,7 +79,6 @@ form.addEventListener("submit", (event) => {
       .then((response) => {
         // 성공
         console.log(response); // test
-        areaAdd();
         removeArea();
         form2.style.visibility = "visible";
         alert("인증번호를 발송하였습니다.");
