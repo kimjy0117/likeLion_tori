@@ -118,7 +118,7 @@
   .userInfo{
     display: flex;
     align-items: center;
-    width: 150px;
+    margin: 20px;
   }
 
   .bulletin{
