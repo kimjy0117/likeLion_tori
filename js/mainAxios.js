@@ -26,9 +26,15 @@ axios
     });
 
     function userIntro(data){
+        let userImg = data.profile_iamge;
         document.getElementById('userName').innerHTML = data.nickname;
-        // document.querySelector("#userImg").src = data.profile_iamge;
-        document.getElementById("userImg").src = "../img/logo80.svg";
+
+        if(userImg == null){
+            document.getElementById("userImg").src = "../img/logo80.svg";
+        }
+        else{
+            document.getElementById("userImg").src = userImg;
+        }
 
         $(document).ready(function(){
             $("#myTori").show();

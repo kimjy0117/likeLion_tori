@@ -215,7 +215,7 @@ function commentBtnHandler(e){
     .catch((error) => {
       // 실패
       console.error(error);
-      alert("게시 실패하였습니다.");
+      alert("로그인 후 작성해주세요.");
       // warning.style.visibility = hidden;
     });
   }
@@ -249,13 +249,12 @@ function getUserDataHandler(data, i){
           //에러 시
           console.log(error);
           hiddenPatch(data, i);
+          
       });
 };
 
 function hiddenPatch(data, i){
   $(document).ready(function(){
-    alert(id);
-    $(`#divPaDel_${data[i].id}`).hide();
-    alert('숨김');
+    $(`#divPaDel_${data.id}`).hide();
   })
 }
