@@ -1,4 +1,6 @@
-let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjI1NjY1LCJpYXQiOjE2OTIyMTg0NjUsImp0aSI6IjExNWI2MTZiZjc3YzQwNjQ5NjJiYWQwMDE1ZTgwMTA4IiwidXNlcl9pZCI6MX0.B7j3uumLiWg-3VEF9y8oolGWxRDJBdNtazZqbRWq2AM";
+let sessionData = sessionStorage.getItem("access");
+
+let token = "Bearer "+ sessionData;
 let getUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
 let getPost = "https://api.servicetori.site/api/posts/posts/";
 
@@ -108,7 +110,7 @@ function createPost(length, data){
             divUser.id = 'divUser';
             divLike.id = 'divLike';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
            
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";
@@ -194,7 +196,7 @@ function createPost(length, data){
             divUser.id = 'divUser';
             divLike.id = 'divLike';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
 
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";

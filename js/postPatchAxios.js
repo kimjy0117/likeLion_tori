@@ -13,9 +13,12 @@ contentBtn3.addEventListener("click", type3);
 contentBtn4.addEventListener("click", type4);
 document.querySelector("#content-form").addEventListener("submit", contentBtnHandler);
 
+const searchParams = new URLSearchParams(location.search);
+let id = searchParams.get('id');
+let postNum = searchParams.get('postNum');
 
 // let token = "Bearer "+ sessionData;
-let postPost = "https://api.servicetori.site/api/posts/posts/";
+let postPatch = `https://api.servicetori.site/api/posts/posts/${id}/`;
 let category = "";
 
 function type1(){
@@ -44,8 +47,8 @@ function contentBtnHandler(e){
     }
 
     axios
-    .post(
-      postPost,
+    .patch(
+      postPatch,
       {
         "title": titleInput,
         "content": input,
@@ -64,9 +67,9 @@ function contentBtnHandler(e){
     .then((response) => {
       // 성공
       console.log(response);
-      alert("게시 성공하였습니다.");
+      alert("수정 성공하였습니다.");
       // e.target.reset();
-      window.location.href = "./index.html";      
+      window.location.href = `./bulletin.html?id=${id}&postNum=${postNum}`;      
      })
 
     .catch((error) => {

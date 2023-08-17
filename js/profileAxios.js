@@ -2,12 +2,11 @@ const warning = document.querySelector("#warning");
 const contentBtn = document.querySelector("#profile-form");
 contentBtn.addEventListener("submit", profileBtnHandler);
 
-let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjI5Njk3LCJpYXQiOjE2OTIyMjI0OTcsImp0aSI6IjgyOGZkZjQzNTVkMzQxMTdhZTg3YjBhMzg2MjYyZDRkIiwidXNlcl9pZCI6MX0.e76A1dDfDDwINFwGrv5qj-kxqRanklNA_WP2HjUhMzI";
+let sessionData = sessionStorage.getItem("access");
+let token = "Bearer "+ sessionData;
 let patchUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
 
 let profile_img;
-
-
 
 document.querySelector('.cameraBtn').addEventListener('click', () => {
   document.querySelector('#cameraInput').click();

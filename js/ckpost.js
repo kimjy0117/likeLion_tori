@@ -1,6 +1,8 @@
 let postImages = "https://api.servicetori.site/api/posts/images/";
 let uploadImagesId = [];
-// let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ"
+let sessionData = sessionStorage.getItem("access");
+
+let token = "Bearer "+ sessionData;
 
 
 DecoupledEditor
@@ -39,7 +41,7 @@ DecoupledEditor
                 axios
                 .post("https://api.servicetori.site/api/posts/images/", data,
                     {
-                        withCredentials: true,
+                        headers: {Authorization: token}
                     },
                 )
                 .then((response) => {

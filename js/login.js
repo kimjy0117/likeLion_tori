@@ -26,7 +26,7 @@ form_login.addEventListener("submit", (event) => {
       console.log(response); // test
       const access = response.data.access;
       sessionStorage.setItem("access", access);
-      // window.location.href = "./index.html";
+      window.location.href = "./index.html";
       alert("로그인에 성공하였습니다.");
     })
     .catch((error) => {

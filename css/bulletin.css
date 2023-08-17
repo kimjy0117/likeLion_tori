@@ -159,12 +159,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: right;
     width: 390px;
     height: 74px;
     border-top: solid;
     border-width: 2px;
     border-color: #0000004D;
-    padding-left: 254px;
+    padding-right: 21px;
   }
 
   #likeBtn{
@@ -175,4 +176,22 @@
 
   img{
     max-width: 340px;
+  }
+
+  #divPaDel{
+    display:flex;
+    flex-direction: row;
+    margin-right: 155px;
+    padding-bottom: 5px;
+  }
+
+  #patchATag{
+    width: 40px;
+  }
+
+  #deleteBtn{
+    width: 40px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
   }

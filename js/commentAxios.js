@@ -1,3 +1,5 @@
+let sessionData = sessionStorage.getItem("access");
+
 const input = document.querySelector("#content");
 const warning = document.querySelector("#warning");
 const bottomArea = document.getElementById('bottomArea');
@@ -6,8 +8,9 @@ commentBtn.addEventListener("submit", commentBtnHandler);
 
 const searchParams = new URLSearchParams(location.search);
 let id = searchParams.get('id')
+let postNum = searchParams.get('postNum')
 
-let token = "Bearer "+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjE3OTE1LCJpYXQiOjE2OTIyMTA3MTUsImp0aSI6ImY5NDY0YjM4NjFiZTQyMTFhYmI0MGExYjc0YTBiZGM3IiwidXNlcl9pZCI6MX0.vUKdj24XIIOZDZz9xFZt8biLD1gZs2tMgtFrqdLttpQ";
+let token = "Bearer "+sessionData;
 let getComment = `https://api.servicetori.site/api/posts/comments/`;
 let postComment = "https://api.servicetori.site/api/posts/comments/";
 
@@ -35,7 +38,7 @@ axios
 
 function backBtnHandler(id){
   let backBtn = document.getElementById('backBtn');
-  backBtn.href = `./bulletin.html?id=${id}`;
+  backBtn.href = `./bulletin.html?id=${id}&postNum=${postNum}`;
 }
 
 function createComment(length, data){

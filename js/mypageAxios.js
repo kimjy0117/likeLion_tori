@@ -1,7 +1,8 @@
+let sessionData = sessionStorage.getItem("access");
 const userName = document.getElementById('userName');
 const userIntro = document.getElementById('userIntro');
 
-let token = "Bearer " + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMjI1NjY1LCJpYXQiOjE2OTIyMTg0NjUsImp0aSI6IjExNWI2MTZiZjc3YzQwNjQ5NjJiYWQwMDE1ZTgwMTA4IiwidXNlcl9pZCI6MX0.B7j3uumLiWg-3VEF9y8oolGWxRDJBdNtazZqbRWq2AM";
+let token = "Bearer " + sessionData;
 let getUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
 let get1Post = "https://api.servicetori.site/api/posts/posts/?mypage=posts";
 let get2Post = "https://api.servicetori.site/api/posts/posts/?mypage=comments";
@@ -44,7 +45,6 @@ axios
     )
     .then(function (response){
         //성공 시
-        alert("성공1");
         console.log(response);
     
         let postLength = response.data.length;
@@ -72,7 +72,6 @@ axios
     )
     .then(function (response){
         //성공 시
-        alert("성공2");
         console.log(response);
         
         let postLength = response.data.length;
@@ -101,7 +100,6 @@ axios
     )
     .then(function (response){
         //성공 시
-        alert("성공3");
         console.log(response);
         
         let postLength = response.data.length;
@@ -134,15 +132,23 @@ function createBulletin1(length, data){
             const userspan = document.createElement('span');
             const aTag = document.createElement('a');
 
+            let title;
+            if(data[i].title.length>6){
+                title = data[i].title.substr(0, 6);
+            }
+            else{
+                title = data[i].title
+            }
+
             div.id = 'bulletinPost';
             divIntro.id = 'divIntro';
             divtitle.id = 'divtitle';
             divuser.id = 'divuser';
             aTag.id = 'aTag';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
 
-            titlespan.innerHTML = data[i].title;
+            titlespan.innerHTML = title;
             titlespan.style.fontSize = "20px";
             titlespan.style.fontWeight = "700";
             titlespan.style.color = "white";
@@ -203,7 +209,7 @@ function createBulletin1(length, data){
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
 
-                aTag.href=`./bulletin.html?id=${data[i].id}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
                 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -245,14 +251,23 @@ function createBulletin1(length, data){
                 const userImg = document.createElement('img');
                 const aTag = document.createElement('a');
 
+                let title;
+
+                if(data[i].title.length>24){
+                    title = data[i].title.substr(0, 24);
+                }
+                else{
+                    title = data[i].title
+                }
+
                 div.id = `bulletinPost`;
                 divTitle1.id = 'divTitle1';
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
 
-                aTag.href=`./bulletin.html?id=${data[i].id}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
                 
-                titleSpan.innerHTML = data[i].title;
+                titleSpan.innerHTML = title;
                 titleSpan.style.fontSize = "20px";
                 titleSpan.style.fontWeight = "700";
 
@@ -292,15 +307,24 @@ function createBulletin2(length, data){
             const userspan = document.createElement('span');
             const aTag = document.createElement('a');
 
+            let title;
+
+            if(data[i].title.length>6){
+                title = data[i].title.substr(0, 6);
+            }
+            else{
+                title = data[i].title
+            }
+
             div.id = 'bulletinPost';
             divIntro.id = 'divIntro';
             divtitle.id = 'divtitle';
             divuser.id = 'divuser';
             aTag.id = 'aTag';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
 
-            titlespan.innerHTML = data[i].title;
+            titlespan.innerHTML = title;
             titlespan.style.fontSize = "20px";
             titlespan.style.fontWeight = "700";
             titlespan.style.color = "white";
@@ -360,7 +384,7 @@ function createBulletin2(length, data){
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
                 
-                aTag.href=`./bulletin.html?id=${data[i].id}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -400,14 +424,22 @@ function createBulletin2(length, data){
                 const userImg = document.createElement('img');
                 const aTag = document.createElement('a');
 
+                let title;
+                if(data[i].title.length>24){
+                    title = data[i].title.substr(0, 24);
+                }
+                else{
+                    title = data[i].title
+                }
+
                 div.id = `bulletinPost`;
                 divTitle1.id = 'divTitle1';
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
                 
-                aTag.href=`./bulletin.html?id=${data[i].id}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
 
-                titleSpan.innerHTML = data[i].title;
+                titleSpan.innerHTML = title;
                 titleSpan.style.fontSize = "20px";
                 titleSpan.style.fontWeight = "700";
 
@@ -447,15 +479,24 @@ function createBulletin3(length, data){
             const userspan = document.createElement('span');
             const aTag = document.createElement('a');
 
+            let title;
+
+            if(data[i].title.length>6){
+                title = data[i].title.substr(0, 6);
+            }
+            else{
+                title = data[i].title
+            }
+
             div.id = 'bulletinPost';
             divIntro.id = 'divIntro';
             divtitle.id = 'divtitle';
             divuser.id = 'divuser';
             aTag.id = 'aTag';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
 
-            titlespan.innerHTML = data[i].title;
+            titlespan.innerHTML = title;
             titlespan.style.fontSize = "20px";
             titlespan.style.fontWeight = "700";
             titlespan.style.color = "white";
@@ -515,7 +556,7 @@ function createBulletin3(length, data){
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
 
-                aTag.href=`./bulletin.html?id=${data[i].id}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
                 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -555,14 +596,22 @@ function createBulletin3(length, data){
                 const userImg = document.createElement('img');
                 const aTag = document.createElement('a');
 
+                let title;
+                if(data[i].title.length>24){
+                    title = data[i].title.substr(0, 24);
+                }
+                else{
+                    title = data[i].title
+                }
+
                 div.id = `bulletinPost`;
                 divTitle1.id = 'divTitle1';
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
 
-                aTag.href=`./bulletin.html?id=${data[i].id}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
                 
-                titleSpan.innerHTML = data[i].title;
+                titleSpan.innerHTML = title;
                 titleSpan.style.fontSize = "20px";
                 titleSpan.style.fontWeight = "700";
 
