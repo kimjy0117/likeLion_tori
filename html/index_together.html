@@ -3,25 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>메인 페이지 (서비스명)</title>
+    <title>토리</title>
     <link rel="stylesheet" href="../css/mainside.css" />
     <script src="../js/mainside.js" defer></script>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/mainCategory.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/mainCategory.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <!-- searchIcon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!-- closeIcon -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <!-- logout -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
   </head>
   <body>
     <header>
       <div class="headerContainer">
         <a href="./index.html">
           <div class="logoContainer">
-            <img src="../img/indexLogo_together.svg" alt="서비스 로고">
+            <img src="../img/indexLogo_together.svg" alt="서비스 로고" />
           </div>
         </a>
-        <div class="upperMenu" style="margin-left: 23px;">
-          <img id="searchIcon" src="../img/search.png" alt="검색 아이콘" />
+        <div class="upperMenu" style="margin-left: 23px">
+          <span
+            class="material-symbols-outlined"
+            style="font-size: 33px"
+            id="searchIcon"
+          >
+            search
+          </span>
           <span id="login"><a href="./Login.html">로그인</a></span>
         </div>
       </div>
@@ -33,24 +57,42 @@
       </div>
       <div id="sideDrawer">
         <div class="xIcon">
-          <img id="xIcon" src="../img/quitIcon.png" alt="나가기 아이콘" />
+          <span
+            class="material-symbols-outlined"
+            id="xIcon"
+            style="font-size: 30px"
+          >
+            close
+          </span>
         </div>
-        <div class="side_userProfile" id = userArea>
+        <div class="side_userProfile" id="userArea">
           <div class="userImg">
             <!-- 해당 영역 유저 이미지 들어감. -->
-            <img id = "userImg" src="../img/logo80.svg" alt="유저 이미지">
+            <img id="userImg" src="../img/logo80.svg" alt="유저 이미지" />
           </div>
           <span id="userName">GUEST</span>
-          <a href="./mypage.html" id = "myTori"><span id="checkProfile">나의 토리</span></a>
+          <a href="./mypage.html" id="myTori"
+            ><span id="checkProfile">나의 토리</span></a
+          >
         </div>
-        <hr id = "line">
-        <ul id = "category">
+        <hr id="line" />
+        <ul id="category">
           <li><a href="../">토리 소개</a></li>
           <li><a href="./index_free.html">자유 이야기</a></li>
           <li><a href="./index_harvest.html">수확했어요</a></li>
           <li><a href="./index_question.html">질문해요</a></li>
           <li><a href="./index_together.html">함께해요</a></li>
         </ul>
+        <div class="logout" style="margin-top: 310px">
+          <span
+            class="material-symbols-outlined"
+            style="font-size: 30px"
+            id="logoutIcon"
+          >
+            logout
+          </span>
+          <span id="logout">로그아웃</span>
+        </div>
       </div>
 
       <div class="alignMenu">
@@ -63,10 +105,9 @@
     </main>
 
     <!-- 게시글 -->
-    <div class="container">
-    </div>
-    
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script  src="../js/mainAxios_together.js"></script>
+    <div class="container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../js/mainAxios_together.js"></script>
   </body>
 </html>

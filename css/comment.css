@@ -119,6 +119,19 @@
     align-items: center;
   }
 
+  #divPaDel{
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+  }
+
+  #deleteBtn{
+    background-color: transparent;
+    border: none;
+    padding-left: 0;
+    padding-top: 4px;
+  }
+
   #divBottom{
     margin-left: 6px;
     margin-bottom: 11px;
@@ -167,3 +180,4 @@
     border-radius: 12px;
     border: 6px solid #ffffff;
 }
+

@@ -214,3 +214,21 @@ select:focus {
   text-decoration: none;
   color: #000000ba;
 }
+
+#logout {
+  position: absolute;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a3f44;
+  top: 7px;
+}
+
+.logout {
+  position: relative;
+  text-align: left;
+  padding-left: 29px;
+}
+
+#logout:hover {
+  cursor: pointer;
+}
