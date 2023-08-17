@@ -21,4 +21,3 @@ $(document).ready(function(){
 });
  
 // emphasized 클래스 : 사이드바가 보여질 box-shadow를 사용해서 투명도 조절 (E.G 레이어 팝업) 
-

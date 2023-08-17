@@ -229,6 +229,7 @@ function getUserDataHandler(data, i){
           }
       )
       .then(function (response){
+
           //성공 시
           console.log('userData');
           console.log(response);
@@ -253,6 +254,8 @@ function getUserDataHandler(data, i){
 
 function hiddenPatch(data, i){
   $(document).ready(function(){
+    alert(id);
     $(`#divPaDel_${data[i].id}`).hide();
+    alert('숨김');
   })
 }
