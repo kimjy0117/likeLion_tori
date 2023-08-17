@@ -31,11 +31,9 @@ axios
 
         if(userImg == null){
             document.getElementById("userImg").src = "../img/logo80.svg";
-            alert("null"+userImg);
         }
         else{
             document.getElementById("userImg").src = userImg;
-            alert("그냥"+userImg);
         }
 
         $(document).ready(function(){
