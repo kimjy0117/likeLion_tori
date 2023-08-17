@@ -93,6 +93,7 @@
   .topContainer{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 340px;
     height: 45px;
     padding-bottom: 11px;
@@ -106,7 +107,6 @@
     font-size: 15px;
     font-weight: 500;
     color:  #00000099;
-    margin-right: 144px;
   }
 
   #userName{
@@ -118,7 +118,6 @@
   .userInfo{
     display: flex;
     align-items: center;
-    margin: 20px;
   }
 
   .bulletin{
