@@ -20,7 +20,7 @@ axios
          }
     )
     .then(function (response){
-        let userImg = data.profile_image;
+        let userImg = response.data.profile_image;
         let nickname = response.data.nickname;
         let introduce = response.data.introduce;
 
