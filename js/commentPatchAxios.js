@@ -210,6 +210,7 @@ function commentBtnHandler(e){
     )
     .then((response) => {
       e.target.reset();
+      alert('댓글이 수정되었습니다.');
       window.location.href=`./comment.html?id=${id}&postNum=${postNum}`;
     })
 
