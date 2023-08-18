@@ -7,8 +7,12 @@ function changeHandler(event) {
   // option value에 따라 다른 함수를 실행
   if (selectedValue === 'Likes') {
     likesEventHandler();
-  } else if (selectedValue === 'Latest') {
+    window.location.reload(); 
+  } 
+  
+  else if (selectedValue === 'Latest') {
     latestEventHandler();
+    window.location.reload(); 
   }
 }
 
