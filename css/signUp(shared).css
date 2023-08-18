@@ -41,6 +41,7 @@ h1 {
   height: 35px;
   top: 51px;
   left: 14px;
+  z-index: 1;
 }
 
 .goBack:hover {

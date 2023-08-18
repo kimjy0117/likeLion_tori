@@ -86,13 +86,15 @@ footer {
   color: #2e3134;
   font-family: "Noto Sans KR", sans-serif;
   font-size: 11px;
-  margin-bottom: 45px;
+  /* margin-bottom: 45px; */
+  margin-bottom: 100px;
   position: relative;
 }
 
 .staffContainer {
   text-align: left;
   margin-left: 35px;
+  
 }
 
 .staffContainer p {

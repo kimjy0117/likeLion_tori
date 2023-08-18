@@ -91,6 +91,8 @@ function getUserDataHandler(postWriter){
     )
     .then(function (response){
         //성공 시
+        hideLoginBtn();
+
         console.log('userData');
         console.log(response);
 
@@ -103,6 +105,7 @@ function getUserDataHandler(postWriter){
         }
     })
     .catch(function (error){
+        showLoginBtn();
         //에러 시
         console.log(error);
     })
@@ -225,3 +228,15 @@ function likeEvent(){
             warning.style.visibility = hidden;
     });
 };
+
+function hideLoginBtn(){
+    $(document).ready(function(){
+        $("#login").hide();
+    });
+}
+
+function showLoginBtn(){
+    $(document).ready(function(){
+        $("#login").show();
+    });
+}

@@ -132,6 +132,10 @@
     padding-top: 4px;
   }
 
+  #deleteBtn:hover{
+    cursor: pointer;
+  }
+
   #divBottom{
     margin-left: 6px;
     margin-bottom: 11px;
@@ -159,6 +163,10 @@
     color: white;
     font-size: 25px;
     font-weight: 700;
+  }
+
+  .btn:hover{
+      cursor: pointer;
   }
 
   .container {

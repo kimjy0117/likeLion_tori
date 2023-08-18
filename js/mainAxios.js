@@ -36,6 +36,7 @@ axios
     .then(function (response){
         //성공 시
         console.log(response);
+        afterLogin()
         let data = response.data;
         userIntro(data);
     })
@@ -312,3 +313,39 @@ function createPost(length, data){
         }
     }
 }
+
+function afterLogin() {
+    const login = document.querySelector("#login");
+    const pColor = document.querySelector(".upperMenu a");
+  
+    login.style.backgroundColor = "white";
+    login.style.border = "2px solid #50b44e";
+    login.innerText = "글 작성";
+  
+    pColor.style.textDecoration = "none";
+    pColor.style.color = "#3a3f44";
+  
+    //   const link = login.querySelector("a");
+    //   if (link) {
+    //     // <a> 요소가 이미 존재하는 경우 href 값을 변경
+    //     link.href = "./post.html";
+    //   } else {
+    //     // <a> 요소가 없는 경우 새로운 <a> 요소를 생성하여 추가
+    //     const newLink = document.createElement("a");
+    //     newLink.href = "./post.html";
+    //     login.appendChild(newLink);
+    //   }
+  
+    login.addEventListener("mouseenter", () => {
+      login.style.cursor = "pointer";
+    });
+    login.addEventListener("mouseleave", () => {
+      login.style.cursor = "auto";
+    });
+  
+    if (login.innerText === "글 작성") {
+      login.addEventListener("click", () => {
+        window.location.href = "./post.html";
+      });
+    }
+  }
