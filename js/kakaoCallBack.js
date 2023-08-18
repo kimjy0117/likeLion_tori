@@ -4,7 +4,7 @@
 3. reponse로 access token 을 받음 
 */
 
-document.addEventListener('load', () => {
+window.addEventListener('load', () => {
   let code = "Bearer " + new URL(window.location.href).searchParams.get("code");
   axios
   .post(
