@@ -67,8 +67,8 @@ kakao.addEventListener("click", (event) => {
   //   });
 });
 
-const naver = document.querySelector("#naverImg");
-kakao.addEventListener("click", (event) => {
-  window.location.href =
-    "https://api.servicetori.site/api/accounts/social/naver/login";
-});
+// const naver = document.querySelector("#naverImg");
+// kakao.addEventListener("click", (event) => {
+//   window.location.href =
+//     "https://api.servicetori.site/api/accounts/social/naver/login";
+// });
