@@ -66,7 +66,7 @@ function contentBtnHandler(e){
       )
     .then((response) => {
       // 성공
-      console.log(response);
+
       alert("수정 성공하였습니다.");
       // e.target.reset();
       window.location.href = `./bulletin.html?id=${id}&postNum=${postNum}`;      

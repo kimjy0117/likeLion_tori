@@ -23,7 +23,7 @@ form_login.addEventListener("submit", (event) => {
     )
     .then((response) => {
       // 성공
-      console.log(response); // test
+
       const access = response.data.access;
       sessionStorage.setItem("access", access);
       window.location.href = "./index.html";

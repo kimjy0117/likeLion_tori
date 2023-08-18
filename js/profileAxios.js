@@ -20,7 +20,6 @@ logo.src = profile_img;
 logo.onload = () => {
     URL.revokeObjectURL(logo.src);
 };
-console.log(profile_img);
 }
 
 function profileBtnHandler(e){
@@ -51,7 +50,7 @@ function profileBtnHandler(e){
     )
     .then((response) => {
       // 성공
-      console.log(response);
+
       alert("프로필이 변경되었습니다.");
       e.target.reset();
       window.location.href = "./index.html";      
@@ -79,7 +78,7 @@ function userDestroyConfirm(){
         })
         .then((response) => {
             // 성공
-            console.log(response);  
+ 
             alert("회원탈퇴 성공!");  
             sessionStorage.removeItem("access");
             window.location.href="./index.html"; 

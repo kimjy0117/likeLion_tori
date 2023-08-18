@@ -6,16 +6,17 @@ const like = document.getElementById('likeIcon');
 const count = document.getElementById('count');
 
 const searchParams = new URLSearchParams(location.search);
-let id = searchParams.get('id');
-let postNum = searchParams.get('postNum');
+let postId = searchParams.get('postId');
+//let postNum = searchParams.get('postNum');
+let postNum;
 let likesOrLatest = searchParams.get('likesOrLatest');
 
 let sessionData = sessionStorage.getItem("access");
 let token = "Bearer "+ sessionData;
 let getPost = `https://api.servicetori.site/api/posts/posts/`;
 let getUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
-let deletePost = `https://api.servicetori.site/api/posts/posts/${id}/`;
-let postLike = `https://api.servicetori.site/api/posts/posts/${id}/like/`;
+let deletePost = `https://api.servicetori.site/api/posts/posts/${postId}/`;
+let postLike = `https://api.servicetori.site/api/posts/posts/${postId}/like/`;
 
 if(likesOrLatest == 0){
     getPost = "https://api.servicetori.site/api/posts/posts/?order=";
@@ -30,12 +31,15 @@ axios
     )
     .then(function (response){
         //성공 시
-        console.log('postData');
-        console.log(response);
-        
+        for(let i=0; i<response.data.length; i++){
+            if(postId == response.data[i].id){
+                postNum = i;
+            }
+        }
+
         let postWriter = response.data[postNum].writer.nickname;
         postHandler(response, postNum);
-        commentBtnHandler(id);
+        commentBtnHandler(postId);
         getUserDataHandler(postWriter);
     })
     .catch(function (error){
@@ -77,7 +81,7 @@ axios
 
     function commentBtnHandler(id){
         let chatIcon = document.getElementById('chatA');
-        chatIcon.href = `./comment.html?id=${id}&postNum=${postNum}`;
+        chatIcon.href = `./comment.html?postId=${id}&postNum=${postNum}`;
     }
 
 
@@ -125,7 +129,7 @@ function getUserDataHandler(postWriter){
         patchATag.id = 'patchATag';
         deleteBtn.id = 'deleteBtn';
 
-        patchATag.href = `./postPatch.html?id=${id}&postNum=${postNum}`;
+        patchATag.href = `./postPatch.html?postId=${postId}`;
         patchATag.style.textDecoratio = "none";
 
         patchSpan.innerHTML = "수정";
@@ -161,7 +165,7 @@ function getUserDataHandler(postWriter){
                 .delete(
                     deletePost,
                     {
-                        "id": id,
+                        "id": postId,
                     },
                     {
                         headers: {
@@ -170,7 +174,6 @@ function getUserDataHandler(postWriter){
                     })
                     .then((response) => {
                         // 성공
-                        console.log(response);  
                         alert("게시물이 삭제되었습니다.");  
                         window.location.href = "./index.html";
                     })
@@ -209,7 +212,7 @@ function likeEvent(){
     .post(
         postLike,
         {
-            "id": id,
+            "id": postId,
         },
         {
             headers: {
@@ -218,7 +221,6 @@ function likeEvent(){
         })
         .then((response) => {
             // 성공
-            console.log(response);    
         })
 
         .catch((error) => {

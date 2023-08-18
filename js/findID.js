@@ -78,7 +78,7 @@ form.addEventListener("submit", (event) => {
       )
       .then((response) => {
         // 성공
-        console.log(response); // test
+
         removeArea();
         form2.style.visibility = "visible";
         alert("인증번호를 발송하였습니다.");
@@ -114,7 +114,7 @@ form2.addEventListener("submit", (event) => {
     // send 후 confirm 으로 true 값 변경 -> 성공시 다시 axios 로 finduser 요청.
     .then((response) => {
       // 성공
-      console.log(response); // test
+
       alert("인증에 성공하였습니다.");
       axios
         .post(
@@ -128,7 +128,7 @@ form2.addEventListener("submit", (event) => {
         )
         .then((response) => {
           // 성공
-          console.log(response); // test
+
           const userId = response.data.username;
           sessionStorage.setItem("userId", userId);
           window.location.href = "./IdResult.html";

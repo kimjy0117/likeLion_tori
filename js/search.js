@@ -206,7 +206,7 @@ search.addEventListener("click", (event) => {
       }
     )
     .then((response) => {
-      console.log(response); // test
+
       let data = response.data;
       let postLength = response.data.length;
 
@@ -239,7 +239,7 @@ function enterKey(event) {
       }
     )
     .then((response) => {
-      console.log(response); // test
+
       let data = response.data;
       let postLength = response.data.length;
 

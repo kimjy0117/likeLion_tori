@@ -60,7 +60,7 @@ getVerifyNum.addEventListener("click", (event) => {
     )
     .then((response) => {
       // 성공
-      console.log(response); // test
+
       alert("인증번호를 발송하였습니다.");
     })
     .catch((error) => {
@@ -85,7 +85,7 @@ resend.addEventListener("click", (event) => {
     )
     .then((response) => {
       // 성공
-      console.log(response); // test
+
       alert("인증번호를 발송하였습니다.");
     })
     .catch((error) => {
@@ -112,7 +112,7 @@ checkVerifyNum.addEventListener("click", (event) => {
     )
     .then((response) => {
       // 성공
-      console.log(response); // test
+
       alert("인증에 성공하였습니다.");
     })
     .catch((error) => {
@@ -155,7 +155,7 @@ form.addEventListener("submit", (event) => {
     )
     .then((response) => {
       // 성공
-      console.log(response); // test
+
       window.location.href = "./login.html";
       alert("회원가입에 성공하였습니다.");
     })

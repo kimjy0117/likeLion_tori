@@ -16,7 +16,7 @@ form.addEventListener("submit", (event) => {
 
     .then((response) => {
       // 성공
-      console.log(response); // test
+
       alert("이메일이 전송되었습니다.");
     })
     .catch((error) => {

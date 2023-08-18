@@ -35,7 +35,6 @@ form.addEventListener("submit", (event) => {
       )
       .then((response) => {
         // 성공
-        console.log(response); // test
         phoneNumCheck.style.visibility = "hidden";
         areaAdd();
       })
@@ -66,7 +65,7 @@ form2.addEventListener("submit", (event) => {
     )
     .then((response) => {
       // 성공
-      console.log(response); // test
+
       alert("인증에 성공하였습니다.");
       window.location.href = "./signUp.html";
     })

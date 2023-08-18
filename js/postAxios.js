@@ -63,7 +63,7 @@ function contentBtnHandler(e){
       )
     .then((response) => {
       // 성공
-      console.log(response);
+
       alert("게시 성공하였습니다.");
       // e.target.reset();
       window.location.href = "./index.html";      

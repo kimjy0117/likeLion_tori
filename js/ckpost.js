@@ -45,7 +45,6 @@ DecoupledEditor
                     },
                 )
                 .then((response) => {
-                    console.log(response.data);
                     uploadImagesId.push(response.data.id);
                     resolve({ default: response.data.url });
                 })

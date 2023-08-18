@@ -21,7 +21,7 @@ form.addEventListener("submit", (event) => {
 
     .then((response) => {
       // 성공
-      console.log(response); // test
+
       alert("인증에 성공하였습니다.");
       const uid = response.data.uid;
       const token = response.data.token;

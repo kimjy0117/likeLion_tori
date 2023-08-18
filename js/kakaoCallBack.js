@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
           withCredentials: true,
       }
   ).then((response) => {
-      console.log(response);
+
       const access = response.data.access;
       sessionStorage.setItem("access", access);
       window.location.href = "./index.html";

@@ -12,15 +12,17 @@ axios
     )
     .then(function (response){
         //성공 시
-        console.log(response);
+
         afterLogin()
         let data = response.data;
         userIntro(data);
+        showLogoutHandler();
     })
     .catch(function (error){
         //에러 시
         console.log(error);
         emptyUserIntro();
+        hideLogoutHandler();
     })
     .finally(function(){
     //항상 실행되는 함수
@@ -61,7 +63,6 @@ axios
     )
     .then(function (response){
         //성공 시
-        console.log(response);
         
         let data = response.data;
         let postLength = response.data.length;
@@ -117,7 +118,7 @@ function createPost(length, data){
             divUser.id = 'divUser';
             divLike.id = 'divLike';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
+            aTag.href=`./bulletin.html?postId=${data[i].id}&postNum=${i}&likesOrLatest=0`;
            
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";
@@ -211,7 +212,7 @@ function createPost(length, data){
             divUser.id = 'divUser';
             divLike.id = 'divLike';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
+            aTag.href=`./bulletin.html?postId=${data[i].id}&postNum=${i}&likesOrLatest=0`;
 
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";
@@ -299,4 +300,16 @@ function afterLogin() {
         window.location.href = "./post.html";
       });
     }
+  }
+
+  function hideLogoutHandler(){
+    $(document).ready(function(){
+        $(".logout").hide();
+    })
+  }
+
+  function showLogoutHandler(){
+    $(document).ready(function(){
+        $(".logout").show();
+    })
   }

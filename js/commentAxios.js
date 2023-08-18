@@ -7,8 +7,8 @@ const commentBtn = document.querySelector("#comment-form");
 commentBtn.addEventListener("submit", commentBtnHandler);
 
 const searchParams = new URLSearchParams(location.search);
-let id = searchParams.get('id')
-let postNum = searchParams.get('postNum')
+let postId = searchParams.get('postId')
+// let postNum = searchParams.get('postNum')
 
 let token = "Bearer "+sessionData;
 let getComment = `https://api.servicetori.site/api/posts/comments/`;
@@ -18,15 +18,15 @@ let getUser = `https://api.servicetori.site/api/accounts/dj-rest-auth/user`;
 axios
   .get(getComment,{
     params: {
-      postId: id
+      postId: postId
     }
   })
   
   .then((response) => {
-    console.log(response);
     let commentLength = response.data.length;
+
     createComment(commentLength, response.data);
-    backBtnHandler(id);
+    backBtnHandler(postId);
     getUserDataHandler(response.data);
   })
   .catch(function (error){
@@ -41,7 +41,7 @@ axios
 // 뒤로가기 버튼 주소값 변경
 function backBtnHandler(id){
   let backBtn = document.getElementById('backBtn');
-  backBtn.href = `./bulletin.html?id=${id}&postNum=${postNum}`;
+  backBtn.href = `./bulletin.html?postId=${id}`;
 }
 
 // 댓글 생성
@@ -87,7 +87,7 @@ function createComment(length, data){
       patchATag.id = 'patchATag';
       deleteBtn.id = 'deleteBtn';
       
-      patchATag.href = `./commentPatch.html?id=${id}&postNum=${postNum}&commentId=${data[i].id}`;
+      patchATag.href = `./commentPatch.html?postId=${postId}&commentId=${data[i].id}`;
       patchATag.style.textDecoration = "none";
 
       userImg.src = "../img/logo30.svg";
@@ -178,7 +178,6 @@ function createComment(length, data){
                   })
                   .then((response) => {
                       // 성공
-                      console.log(response);  
                       alert("댓글이 삭제되었습니다.");  
                       window.location.reload(); 
                   })
@@ -207,7 +206,7 @@ function commentBtnHandler(e){
     axios
     .post(postComment,
       {
-        "post": id,
+        "post": postId,
         "content": input.value,
       },
         {
@@ -237,14 +236,7 @@ function getUserDataHandler(data, i){
       )
       .then(function (response){
 
-          //성공 시
-          console.log('userData');
-          console.log(response);
-
-          console.log('사용자 동일 여부');
-          console.log(response.data.nickname);
-          console.log(data.writer.nickname);
-          
+          //성공 시       
           if(response.data.nickname === data.writer.nickname){
           }
           else{
