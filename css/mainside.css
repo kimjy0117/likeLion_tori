@@ -197,6 +197,11 @@ select:focus {
   font-weight: 500;
   font-size: 18px;
   padding: 0;
+  width : 145px;
+height : 37px;
+padding : 7px;
+color : #2E3134;
+font-weight : 600;
 }
 
 #checkProfille:hover {

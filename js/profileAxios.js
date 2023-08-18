@@ -5,6 +5,7 @@ contentBtn.addEventListener("submit", profileBtnHandler);
 let sessionData = sessionStorage.getItem("access");
 let token = "Bearer "+ sessionData;
 let patchUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
+let deleteUser = "https://api.servicetori.site/api/accounts/dj_rest_auth/user/destroy";
 
 let profile_img;
 
@@ -63,3 +64,34 @@ function profileBtnHandler(e){
       warning.style.visibility = hidden;
     });
   }
+
+function userDestroyConfirm(){
+  let result = confirm("정말로 회원탈퇴를 하시겠습니까?");
+  
+  if(result){
+    axios
+    .delete(
+      deleteUser,
+        {
+            headers: {
+            "Authorization": token,
+        },
+        })
+        .then((response) => {
+            // 성공
+            console.log(response);  
+            alert("회원탈퇴 성공!");  
+            sessionStorage.removeItem("access");
+            window.location.href="./index.html"; 
+        })
+
+        .catch((error) => {
+            // 실패
+            console.error(error);
+            alert("회원탈퇴 실패!");
+            warning.style.visibility = hidden;
+      }
+    )
+  }
+}
+
