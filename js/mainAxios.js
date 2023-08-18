@@ -189,7 +189,7 @@ function createPost(length, data){
             userImg.style.borderRadius = "50%";
             userImg.style.backgroundColor = "transparent";
 
-            heartImg.src = "../img/blueheart25.png";
+            heartImg.src = "../img/blueheart25.svg";
             divBox.style.color="black";
             
             img.src = "https://api.servicetori.site" + data[i].images[0].image;
@@ -289,7 +289,7 @@ function createPost(length, data){
             userImg.style.borderRadius = "50%";
             userImg.style.backgroundColor = "transparent";
 
-            heartImg.src = "../img/blueheart25.png";
+            heartImg.src = "../img/blueheart25.svg";
             divBox.style.color="black";
 
             divTop.appendChild(titleSpan);

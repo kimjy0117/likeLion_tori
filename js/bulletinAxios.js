@@ -187,7 +187,7 @@ function getUserDataHandler(postWriter){
 
     // 좋아요 버튼 이벤트
 let blikeIcon = "../img/heart.png";
-let likeIcon = "../img/blueheart.png";
+let likeIcon = "../img/blueheart.svg";
 let likeCount= 0;
 
 function likeEvent(){
