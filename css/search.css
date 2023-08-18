@@ -38,3 +38,7 @@
 #searchForm {
   margin-top: 23px;
 }
+
+#search:focus {
+  outline: none;
+}

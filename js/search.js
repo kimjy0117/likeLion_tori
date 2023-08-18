@@ -42,7 +42,7 @@ function createPost(length, data) {
       titleSpan.style.fontSize = "25px";
       titleSpan.style.fontWeight = "700";
 
-      userSpan.innerHTML = data[i].writer;
+      userSpan.innerHTML = data[i].writer.nickname;
       userSpan.style.fontSize = "16px";
       userSpan.style.fontWeight = "600";
       userSpan.style.marginLeft = "7px";
@@ -52,6 +52,14 @@ function createPost(length, data) {
       likeSpan.style.fontWeight = "500";
 
       userImg.src = "../img/logo30.svg";
+      if(data[i].writer.profile_image != null){
+          userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+      }
+      userImg.style.width = "30px";
+      userImg.style.height = "30px";
+      userImg.style.borderRadius = "50%";
+      userImg.style.backgroundColor = "transparent";
+
       heartImg.src = "../img/blueheart25.png";
       divBox.style.color = "black";
 
@@ -132,7 +140,7 @@ function createPost(length, data) {
       contentSpan.style.fontWeight = "400";
       contentSpan.style.marginLeft = "11px";
 
-      userSpan.innerHTML = data[i].writer;
+      userSpan.innerHTML = data[i].writer.nickname;
       userSpan.style.fontSize = "16px";
       userSpan.style.fontWeight = "600";
       userSpan.style.marginLeft = "7px";
@@ -142,6 +150,14 @@ function createPost(length, data) {
       likeSpan.style.fontWeight = "500";
 
       userImg.src = "../img/logo30.svg";
+            if(data[i].writer.profile_image != null){
+                userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+            }
+            userImg.style.width = "30px";
+            userImg.style.height = "30px";
+            userImg.style.borderRadius = "50%";
+            userImg.style.backgroundColor = "transparent";
+
       heartImg.src = "../img/blueheart25.png";
       divBox.style.color = "black";
 

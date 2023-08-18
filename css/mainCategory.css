@@ -8,3 +8,11 @@
     width: 160px;
     padding-left: 25px;
 }
+
+#searchIcon{
+    color: white;
+}
+
+#searchIcon:hover{
+    cursor: default;
+}
