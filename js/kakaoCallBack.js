@@ -4,11 +4,14 @@
 3. reponse로 access token 을 받음 
 */
 
-window.onload = function() { {
-  let code = new URL(window.location.href).searchParams.get("code");
+document.addEventListener('load', () => {
+  let code = "Bearer " + new URL(window.location.href).searchParams.get("code");
   axios
   .post(
       "https://api.servicetori.site/api/accounts/dj-rest-auth/token/refresh/",
+      {
+          headers: { Authorization: code }
+      },
       {
           withCredentials: true,
       }
@@ -23,4 +26,4 @@ window.onload = function() { {
       alert("소셜 로그인에 실패하였습니다.");
       window.location.href = "./login.html";
   });
-}};
+});

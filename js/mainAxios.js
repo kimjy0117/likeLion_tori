@@ -1,26 +1,28 @@
-// const selectElement = document.querySelector('#align-set');
-// selectElement.addEventListener('change', changeHandler);
-// function changeHandler(event) {
-//     const selectedValue = event.target.value;
+const selectElement = document.querySelector('#align-set');
+selectElement.addEventListener('change', changeHandler);
+
+let getPost = "https://api.servicetori.site/api/posts/posts/?order=popular";
+function changeHandler(event) {
+    const selectedValue = event.target.value;
     
-//     // option value에 따라 다른 함수를 실행
-//     if (selectedValue === 'Likes') {
+    // option value에 따라 다른 함수를 실행
+    if (selectedValue === 'Likes') {
        
-//       getPost = "https://api.servicetori.site/api/posts/posts/?order=popular"
-//       getPostAxios(getPost);
-//     } 
+      getPost = "https://api.servicetori.site/api/posts/posts/?order=popular"
+      window.location.reload(); 
+    } 
     
-//     else if (selectedValue === 'Latest') {
+    else if (selectedValue === 'Latest') {
          
-//       getPost = "https://api.servicetori.site/api/posts/posts/?order="
-//       getPostAxios(getPost);
-//     }
-//   }
+      getPost = "https://api.servicetori.site/api/posts/posts/?order="
+      window.location.reload(); 
+    }
+  }
 
 let sessionData = sessionStorage.getItem("access");
 let token = "Bearer "+ sessionData;
 let getUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
-let getPost = "https://api.servicetori.site/api/posts/posts/?order=popular";
+
 
 axios
     .get(getUser,
@@ -94,6 +96,30 @@ axios
     .finally(function(){
      //항상 실행되는 함수
     });
+
+// function getPostAxios(getOptionPost){
+//     axios
+//     .get(getOptionPost,
+//     )
+//     .then(function (response){
+//         //성공 시
+//         console.log(response);
+        
+//         let data = response.data;
+//         let postLength = response.data.length;
+
+//         if(postLength>0){
+//             createPost(postLength, data);
+//         }
+//     })
+//     .catch(function (error){
+//         //에러 시
+//         console.log(error);
+//     })
+//     .finally(function(){
+//      //항상 실행되는 함수
+//     });
+// }
 
 
 function createPost(length, data){
