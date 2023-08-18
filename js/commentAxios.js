@@ -107,19 +107,19 @@ function createComment(length, data){
 
       // 작성자와 사용자의 정보가 일치할 시 생성되는 수정 삭제
       patchSpan.innerHTML = "수정";
-      patchSpan.style.fontSize = "13px";
-      patchSpan.style.fontWeight = "600";
+      patchSpan.style.fontSize = "15px";
+      patchSpan.style.fontWeight = "800";
       patchSpan.style.color = "#2E3134B2";     
 
       sepSpan.innerHTML = "  /  ";
-      sepSpan.style.fontSize = "13px";
-      sepSpan.style.fontWeight = "600";
+      sepSpan.style.fontSize = "15px";
+      sepSpan.style.fontWeight = "800";
       sepSpan.style.color = "#2E3134B2";   
       sepSpan.style.margin = "2px";
 
       deleteSpan.innerHTML = "삭제";
-      deleteSpan.style.fontSize = "13px";
-      deleteSpan.style.fontWeight = "600";
+      deleteSpan.style.fontSize = "15px";
+      deleteSpan.style.fontWeight = "800";
       deleteSpan.style.color = "#2E3134B2";
 
       
