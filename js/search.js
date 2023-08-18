@@ -167,9 +167,9 @@ function createPost(length, data) {
 }
 const form = document.querySelector("#searchForm");
 
-const search = document.querySelector("#search");
+const search = document.querySelector("#inputIcon");
 
-searchIcon.addEventListener("click", (event) => {
+search.addEventListener("click", (event) => {
   event.preventDefault();
 
   const search = document.querySelector("#search").value;
@@ -205,10 +205,10 @@ searchIcon.addEventListener("click", (event) => {
 });
 
 function enterKey() {
-  const search = document.querySelector("#search").value;
+  const search2 = document.querySelector("#search").value;
 
   const params = {
-    search: search,
+    search: search2,
   };
 
   axios

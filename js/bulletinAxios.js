@@ -32,16 +32,11 @@ axios
         //성공 시
         console.log('postData');
         console.log(response);
-        alert('0');
         
         let postWriter = response.data[postNum].writer.nickname;
-        alert(postWriter);
         postHandler(response, postNum);
-        alert('1');
         commentBtnHandler(id);
-        alert('2');
         getUserDataHandler(postWriter);
-        alert('3');
     })
     .catch(function (error){
         //에러 시
@@ -71,6 +66,8 @@ axios
         document.getElementById('logo').src= logo;
         document.getElementById('logo').style.width = "30px";
         document.getElementById('logo').style.height = "30px";
+        document.getElementById('logo').style.borderRadius = "50%";
+        document.getElementById('logo').style.backgroundColor = "transparent";
 
         title.innerHTML = titleText;
         date.innerHTML = redate;

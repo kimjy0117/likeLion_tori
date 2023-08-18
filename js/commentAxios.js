@@ -91,8 +91,15 @@ function createComment(length, data){
       patchATag.style.textDecoration = "none";
 
       userImg.src = "../img/logo30.svg";
+      if (data[i].writer.profile_image != null){
+        userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+      }
+      userImg.style.width = "30px";
+      userImg.style.height = "30px";
+      userImg.style.borderRadius = "50%";
+      userImg.style.backgroundColor = "transparent";
 
-      userSpan.innerHTML = data[i].writer;
+      userSpan.innerHTML = data[i].writer.nickname;
       userSpan.style.fontSize = "16px";
       userSpan.style.fontWeight = "600";
       userSpan.style.marginLeft = "7px";
@@ -236,9 +243,9 @@ function getUserDataHandler(data, i){
 
           console.log('사용자 동일 여부');
           console.log(response.data.nickname);
-          console.log(data.writer);
+          console.log(data.writer.nickname);
           
-          if(response.data.nickname === data.writer){
+          if(response.data.nickname === data.writer.nickname){
           }
           else{
             hiddenPatch(data, i);

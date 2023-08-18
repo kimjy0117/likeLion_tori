@@ -186,6 +186,8 @@ function createPost(length, data){
             }
             userImg.style.width = "30px";
             userImg.style.height = "30px";
+            userImg.style.borderRadius = "50%";
+            userImg.style.backgroundColor = "transparent";
 
             heartImg.src = "../img/blueheart25.png";
             divBox.style.color="black";
@@ -284,6 +286,8 @@ function createPost(length, data){
             }
             userImg.style.width = "30px";
             userImg.style.height = "30px";
+            userImg.style.borderRadius = "50%";
+            userImg.style.backgroundColor = "transparent";
 
             heartImg.src = "../img/blueheart25.png";
             divBox.style.color="black";

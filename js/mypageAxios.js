@@ -29,6 +29,10 @@ axios
         }
         else{
             document.getElementById("logo").src = userImg;
+            document.getElementById("logo").style.width = "80px";
+            document.getElementById("logo").style.height = "80px";
+            document.getElementById("logo").style.borderRadius = "50%";
+            document.getElementById("logo").style.backgroundColor = "transparent";
         }
         
         userName.innerHTML = nickname;
@@ -157,13 +161,20 @@ function createBulletin1(length, data){
             titlespan.style.fontWeight = "700";
             titlespan.style.color = "white";
 
-            userspan.innerHTML = data[i].writer;
+            userspan.innerHTML = data[i].writer.nickname;
             userspan.style.color = "white";
             userspan.style.fontSize = "11px";
             userspan.style.fontWeight = "600";
             userspan.style.marginLeft = "5px";
 
             userImg.src = "../img/logo20.svg";
+            if (data[i].writer.profile_image != null){
+                userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+              }
+              userImg.style.width = "20px";
+              userImg.style.height = "20px";
+              userImg.style.borderRadius = "50%";
+              userImg.style.backgroundColor = "transparent";  
             
             img.src = "https://api.servicetori.site" + data[i].images[0].image;
             img.style.width = "165px";
@@ -224,8 +235,15 @@ function createBulletin1(length, data){
                 textSpan.style.fontweight = "400";
 
                 userImg.src = "../img/logo20.svg";
+                if (data[i].writer.profile_image != null){
+                    userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+                  }
+                  userImg.style.width = "20px";
+                  userImg.style.height = "20px";
+                  userImg.style.borderRadius = "50%";
+                  userImg.style.backgroundColor = "transparent";  
 
-                userSpan.innerHTML = data[i].writer;
+                userSpan.innerHTML = data[i].writer.nickname;
                 userSpan.style.fontSize = "11px";
                 userSpan.style.fontWeight = "600";
                 userSpan.style.marginLeft = "5px";
@@ -275,9 +293,17 @@ function createBulletin1(length, data){
                 titleSpan.style.fontSize = "20px";
                 titleSpan.style.fontWeight = "700";
 
+                
                 userImg.src = "../img/logo20.svg";
+                if (data[i].writer.profile_image != null){
+                    userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+                  }
+                userImg.style.width = "20px";
+                userImg.style.height = "20px";
+                userImg.style.borderRadius = "50%";
+                userImg.style.backgroundColor = "transparent";  
 
-                userSpan.innerHTML = data[i].writer;
+                userSpan.innerHTML = data[i].writer.nickname;
                 userSpan.style.fontSize = "11px";
                 userSpan.style.fontWeight = "600";
                 userSpan.style.marginLeft = "5px";
@@ -333,13 +359,20 @@ function createBulletin2(length, data){
             titlespan.style.fontWeight = "700";
             titlespan.style.color = "white";
 
-            userspan.innerHTML = data[i].writer;
+            userspan.innerHTML = data[i].writer.nickname;
             userspan.style.color = "white";
             userspan.style.fontSize = "11px";
             userspan.style.fontWeight = "600";
             userspan.style.marginLeft = "5px";
 
             userImg.src = "../img/logo20.svg";
+            if (data[i].writer.profile_image != null){
+                userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+              }
+            userImg.style.width = "20px";
+            userImg.style.height = "20px";
+            userImg.style.borderRadius = "50%";
+            userImg.style.backgroundColor = "transparent";  
             
             img.src = "https://api.servicetori.site" + data[i].images[0].image;
             img.style.width = "165px";
@@ -399,8 +432,15 @@ function createBulletin2(length, data){
                 textSpan.style.fontweight = "400";
 
                 userImg.src = "../img/logo20.svg";
+                if (data[i].writer.profile_image != null){
+                    userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+                  }
+                  userImg.style.width = "20px";
+                  userImg.style.height = "20px";
+                  userImg.style.borderRadius = "50%";
+                  userImg.style.backgroundColor = "transparent";  
 
-                userSpan.innerHTML = data[i].writer;
+                userSpan.innerHTML = data[i].writer.nickname;
                 userSpan.style.fontSize = "11px";
                 userSpan.style.fontWeight = "600";
                 userSpan.style.marginLeft = "5px";
@@ -448,8 +488,15 @@ function createBulletin2(length, data){
                 titleSpan.style.fontWeight = "700";
 
                 userImg.src = "../img/logo20.svg";
+                if (data[i].writer.profile_image != null){
+                    userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+                  }
+                userImg.style.width = "20px";
+                userImg.style.height = "20px";
+                userImg.style.borderRadius = "50%";
+                userImg.style.backgroundColor = "transparent";  
 
-                userSpan.innerHTML = data[i].writer;
+                userSpan.innerHTML = data[i].writer.nickname;
                 userSpan.style.fontSize = "11px";
                 userSpan.style.fontWeight = "600";
                 userSpan.style.marginLeft = "5px";
@@ -505,13 +552,20 @@ function createBulletin3(length, data){
             titlespan.style.fontWeight = "700";
             titlespan.style.color = "white";
 
-            userspan.innerHTML = data[i].writer;
+            userspan.innerHTML = data[i].writer.nickname;
             userspan.style.color = "white";
             userspan.style.fontSize = "11px";
             userspan.style.fontWeight = "600";
             userspan.style.marginLeft = "5px";
 
             userImg.src = "../img/logo20.svg";
+            if (data[i].writer.profile_image != null){
+                userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+              }
+            userImg.style.width = "20px";
+            userImg.style.height = "20px";
+            userImg.style.borderRadius = "50%";
+            userImg.style.backgroundColor = "transparent";  
             
             img.src = "https://api.servicetori.site" + data[i].images[0].image;
             img.style.width = "165px";
@@ -571,8 +625,15 @@ function createBulletin3(length, data){
                 textSpan.style.fontweight = "400";
 
                 userImg.src = "../img/logo20.svg";
+                if (data[i].writer.profile_image != null){
+                    userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+                  }
+                userImg.style.width = "20px";
+                userImg.style.height = "20px";
+                userImg.style.borderRadius = "50%";
+                userImg.style.backgroundColor = "transparent";  
 
-                userSpan.innerHTML = data[i].writer;
+                userSpan.innerHTML = data[i].writer.nickname;
                 userSpan.style.fontSize = "11px";
                 userSpan.style.fontWeight = "600";
                 userSpan.style.marginLeft = "5px";
@@ -620,8 +681,15 @@ function createBulletin3(length, data){
                 titleSpan.style.fontWeight = "700";
 
                 userImg.src = "../img/logo20.svg";
+                if (data[i].writer.profile_image != null){
+                    userImg.src = "https://api.servicetori.site" + data[i].writer.profile_image;
+                  }
+                userImg.style.width = "20px";
+                userImg.style.height = "20px";
+                userImg.style.borderRadius = "50%";
+                userImg.style.backgroundColor = "transparent";  
 
-                userSpan.innerHTML = data[i].writer;
+                userSpan.innerHTML = data[i].writer.nickname;
                 userSpan.style.fontSize = "11px";
                 userSpan.style.fontWeight = "600";
                 userSpan.style.marginLeft = "5px";
