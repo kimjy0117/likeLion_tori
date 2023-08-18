@@ -7,24 +7,20 @@
 window.addEventListener("load", () => {
   let code = new URL(window.location.href).searchParams.get("code");
   axios
-    .post(
-      "https://api.servicetori.site/api/accounts/social/kakao/callback",
+  .post(
+      "https://api.servicetori.site/api/accounts/dj-rest-auth/token/refresh/",
       {
-        code: code,
-      },
-      {
-        withCredentials: true,
+          withCredentials: true,
       }
-    )
-
-    .then((response) => {
+  ).then((response) => {
       console.log(response);
+      const access = response.data.access;
+      sessionStorage.setItem("access", access);
       alert("소셜 로그인에 성공하였습니다.");
       window.location.href = "./index.html";
-    })
-    .catch((error) => {
+  }).catch((error) => {
       console.error(error);
       alert("소셜 로그인에 실패하였습니다.");
       window.location.href = "./login.html";
-    });
+  });
 });
