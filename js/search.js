@@ -220,9 +220,9 @@ search.addEventListener("click", (event) => {
     });
 });
 
-function enterKey() {
+function enterKey(event) {
+  event.preventDefault
   const search2 = document.querySelector("#search").value;
-
   const params = {
     search: search2,
   };
