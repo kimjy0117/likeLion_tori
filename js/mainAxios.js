@@ -2,6 +2,7 @@ const selectElement = document.querySelector('#align-set');
 selectElement.addEventListener('change', changeHandler);
 
 let getPost = "https://api.servicetori.site/api/posts/posts/?order=";
+let likesOrLatest = 0;
 
 function changeHandler(event) {
     const selectedValue = event.target.value;
@@ -10,11 +11,13 @@ function changeHandler(event) {
     if (selectedValue === 'Likes') {
     
       getPost = "https://api.servicetori.site/api/posts/posts/?order=popular"
+      likesOrLatest = 1;
       getPostAxios(getPost);
     } 
     
     else if (selectedValue === 'Latest') {
       getPost = "https://api.servicetori.site/api/posts/posts/?order=" 
+      likesOrLatest = 0;
       getPostAxios(getPost);
     }
   }
@@ -162,7 +165,7 @@ function createPost(length, data){
             divUser.id = 'divUser';
             divLike.id = 'divLike';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=${likesOrLatest}`;
            
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";
@@ -248,7 +251,7 @@ function createPost(length, data){
             divUser.id = 'divUser';
             divLike.id = 'divLike';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=${likesOrLatest}`;
 
             titleSpan.innerHTML = title;
             titleSpan.style.fontSize = "25px";

@@ -150,7 +150,7 @@ function createBulletin1(length, data){
             divuser.id = 'divuser';
             aTag.id = 'aTag';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
 
             titlespan.innerHTML = title;
             titlespan.style.fontSize = "20px";
@@ -213,7 +213,7 @@ function createBulletin1(length, data){
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
 
-                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
                 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -269,7 +269,7 @@ function createBulletin1(length, data){
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
 
-                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
                 
                 titleSpan.innerHTML = title;
                 titleSpan.style.fontSize = "20px";
@@ -326,7 +326,7 @@ function createBulletin2(length, data){
             divuser.id = 'divuser';
             aTag.id = 'aTag';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
 
             titlespan.innerHTML = title;
             titlespan.style.fontSize = "20px";
@@ -388,7 +388,7 @@ function createBulletin2(length, data){
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
                 
-                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -441,7 +441,7 @@ function createBulletin2(length, data){
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
                 
-                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
 
                 titleSpan.innerHTML = title;
                 titleSpan.style.fontSize = "20px";
@@ -498,7 +498,7 @@ function createBulletin3(length, data){
             divuser.id = 'divuser';
             aTag.id = 'aTag';
 
-            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+            aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
 
             titlespan.innerHTML = title;
             titlespan.style.fontSize = "20px";
@@ -560,7 +560,7 @@ function createBulletin3(length, data){
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
 
-                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
                 
                 titleSpan.innerHTML = data[i].title;
                 titleSpan.style.fontSize = "20px";
@@ -613,7 +613,7 @@ function createBulletin3(length, data){
                 divUser.id = 'divUser';
                 aTag.id = 'aTag';
 
-                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}`;
+                aTag.href=`./bulletin.html?id=${data[i].id}&postNum=${i}&likesOrLatest=0`;
                 
                 titleSpan.innerHTML = title;
                 titleSpan.style.fontSize = "20px";
