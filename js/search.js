@@ -167,8 +167,11 @@ function createPost(length, data) {
 }
 const form = document.querySelector("#searchForm");
 
-form.addEventListener("submit", (event) => {
+const search = document.querySelector("#search");
+
+searchIcon.addEventListener("click", (event) => {
   event.preventDefault();
+
   const search = document.querySelector("#search").value;
 
   const params = {
@@ -200,3 +203,36 @@ form.addEventListener("submit", (event) => {
       console.error(error);
     });
 });
+
+function enterKey() {
+  const search = document.querySelector("#search").value;
+
+  const params = {
+    search: search,
+  };
+
+  axios
+    .get(
+      "https://api.servicetori.site/api/posts/posts",
+      {
+        params: params,
+      },
+      {
+        withCredentials: true,
+        headers: { Authorization: token },
+      }
+    )
+    .then((response) => {
+      console.log(response); // test
+      let data = response.data;
+      let postLength = response.data.length;
+
+      if (postLength > 0) {
+        createPost(postLength, data);
+      }
+    })
+    .catch((error) => {
+      // 실패
+      console.error(error);
+    });
+}

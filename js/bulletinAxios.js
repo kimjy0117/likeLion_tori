@@ -32,11 +32,16 @@ axios
         //성공 시
         console.log('postData');
         console.log(response);
+        alert('0');
         
-        let postWriter = response.data[postNum].writer;
+        let postWriter = response.data[postNum].writer.nickname;
+        alert(postWriter);
         postHandler(response, postNum);
+        alert('1');
         commentBtnHandler(id);
+        alert('2');
         getUserDataHandler(postWriter);
+        alert('3');
     })
     .catch(function (error){
         //에러 시
@@ -51,20 +56,22 @@ axios
     // 포스트 보여지는 함수
     function postHandler(response, postId){
         let logo = "../img/logo30.svg";
+
+        if (response.data[postId].writer.profile_image != null){
+            logo = "https://api.servicetori.site" + response.data[postId].writer.profile_image;
+        }
+
         let time = response.data[postId].created_at.split('-');
         let time1 = time[0]+"."+time[1]+"."+time[2];
         let redate = time1.split('T')[0];
-        let nickname = response.data[postId].writer;
+        let nickname = response.data[postId].writer.nickname;
         let titleText = response.data[postId].title;
         let contentText = response.data[postId].content;
-        let newText;
-
-        if(titleText.indexOf("http://3.36.100.188") !== -1 ){
-            newText = titleText.split('http://3.36.100.188');
-            titleText = newText[0]+"https://api.servicetori.site"+newText[1];
-        }
         
         document.getElementById('logo').src= logo;
+        document.getElementById('logo').style.width = "30px";
+        document.getElementById('logo').style.height = "30px";
+
         title.innerHTML = titleText;
         date.innerHTML = redate;
         userName.innerHTML = nickname;
