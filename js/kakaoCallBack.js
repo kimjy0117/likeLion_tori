@@ -4,7 +4,7 @@
 3. reponse로 access token 을 받음 
 */
 
-window.addEventListener("load", () => {
+window.onload = function() { {
   let code = new URL(window.location.href).searchParams.get("code");
   axios
   .post(
@@ -23,4 +23,4 @@ window.addEventListener("load", () => {
       alert("소셜 로그인에 실패하였습니다.");
       window.location.href = "./login.html";
   });
-});
+}};

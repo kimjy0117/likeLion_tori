@@ -1,8 +1,29 @@
-let sessionData = sessionStorage.getItem("access");
+const selectElement = document.querySelector('#align-set');
+selectElement.addEventListener('change', changeHandler);
 
+function changeHandler(event) {
+  const selectedValue = event.target.value;
+  
+  // option value에 따라 다른 함수를 실행
+  if (selectedValue === 'Likes') {
+    likesEventHandler();
+  } else if (selectedValue === 'Latest') {
+    latestEventHandler();
+  }
+}
+
+let sessionData = sessionStorage.getItem("access");
 let token = "Bearer "+ sessionData;
 let getUser = "https://api.servicetori.site/api/accounts/dj-rest-auth/user";
 let getPost = "https://api.servicetori.site/api/posts/posts/";
+
+function likesEventHandler() {
+    getPost = "https://api.servicetori.site/api/posts/posts/?order=popular"
+}
+
+function latestEventHandler() {
+    getPost = "https://api.servicetori.site/api/posts/posts/?order="
+}
 
 axios
     .get(getUser,
