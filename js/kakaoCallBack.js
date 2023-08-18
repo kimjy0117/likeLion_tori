@@ -19,8 +19,8 @@ window.addEventListener('load', () => {
       console.log(response);
       const access = response.data.access;
       sessionStorage.setItem("access", access);
-      alert("소셜 로그인에 성공하였습니다.");
       window.location.href = "./index.html";
+      alert("소셜 로그인에 성공하였습니다.");
   }).catch((error) => {
       console.error(error);
       alert("소셜 로그인에 실패하였습니다.");
