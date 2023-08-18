@@ -14,11 +14,10 @@ contentBtn4.addEventListener("click", type4);
 document.querySelector("#content-form").addEventListener("submit", contentBtnHandler);
 
 const searchParams = new URLSearchParams(location.search);
-let id = searchParams.get('id');
-let postNum = searchParams.get('postNum');
+let postId = searchParams.get('postId');
 
 // let token = "Bearer "+ sessionData;
-let postPatch = `https://api.servicetori.site/api/posts/posts/${id}/`;
+let postPatch = `https://api.servicetori.site/api/posts/posts/${postId}/`;
 let category = "";
 
 function type1(){
@@ -69,7 +68,7 @@ function contentBtnHandler(e){
 
       alert("수정 성공하였습니다.");
       // e.target.reset();
-      window.location.href = `./bulletin.html?id=${id}&postNum=${postNum}`;      
+      window.location.href = `./bulletin.html?postId=${postId}`;      
      })
 
     .catch((error) => {
