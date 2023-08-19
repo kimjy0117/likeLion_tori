@@ -36,7 +36,7 @@ function createPost(length, data) {
       divUser.id = "divUser";
       divLike.id = "divLike";
 
-      aTag.href = `./bulletin.html?id=${data[i].id}&postNum=${i}`;
+      aTag.href = `./bulletin.html?postId=${data[i].id}&likesOrLatest=0`;
 
       titleSpan.innerHTML = title;
       titleSpan.style.fontSize = "25px";
@@ -60,7 +60,7 @@ function createPost(length, data) {
       userImg.style.borderRadius = "50%";
       userImg.style.backgroundColor = "transparent";
 
-      heartImg.src = "../img/blueheart25.png";
+      heartImg.src = "../img/blueheart25.svg";
       divBox.style.color = "black";
 
       img.src = "https://api.servicetori.site" + data[i].images[0].image;
@@ -128,7 +128,7 @@ function createPost(length, data) {
       divUser.id = "divUser";
       divLike.id = "divLike";
 
-      aTag.href = `./bulletin.html?id=${data[i].id}&postNum=${i}`;
+      aTag.href = `./bulletin.html?postId=${data[i].id}&likesOrLatest=0`;
 
       titleSpan.innerHTML = title;
       titleSpan.style.fontSize = "25px";
@@ -158,7 +158,7 @@ function createPost(length, data) {
             userImg.style.borderRadius = "50%";
             userImg.style.backgroundColor = "transparent";
 
-      heartImg.src = "../img/blueheart25.png";
+      heartImg.src = "../img/blueheart25.svg";
       divBox.style.color = "black";
 
       divTop.appendChild(titleSpan);
